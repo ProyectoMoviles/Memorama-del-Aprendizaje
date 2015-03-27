@@ -1,13 +1,13 @@
 //
-//  Dificultad.h
+//  ScoresViewController.h
 //  Proyecto Final
 //
-//  Created by alumno on 25/03/15.
+//  Created by Iker Arbulu Lozano on 3/26/15.
 //  Copyright (c) 2015 Iker Arbulu Lozano. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface Dificultad : UIPickerView
+@interface ScoresViewController : UIViewController
 
 @end

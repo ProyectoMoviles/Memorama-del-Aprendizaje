@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1303813A1AC4D6B4000C5612 /* JuegoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 130381391AC4D6B4000C5612 /* JuegoViewController.m */; };
+		1303813D1AC4D7A4000C5612 /* ScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1303813C1AC4D7A4000C5612 /* ScoresViewController.m */; };
 		13159FC11AC228D30038084B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13159FC01AC228D30038084B /* main.m */; };
 		13159FC41AC228D30038084B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13159FC31AC228D30038084B /* AppDelegate.m */; };
 		13159FC71AC228D30038084B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13159FC61AC228D30038084B /* ViewController.m */; };
@@ -15,10 +17,6 @@
 		13159FCF1AC228D30038084B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13159FCD1AC228D30038084B /* LaunchScreen.xib */; };
 		13159FDB1AC228D30038084B /* Proyecto_FinalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13159FDA1AC228D30038084B /* Proyecto_FinalTests.m */; };
 		FB92C2251AC34DE70021C171 /* Bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = FB92C2241AC34DE70021C171 /* Bomb.png */; };
-		FB92C22B1AC350300021C171 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB92C22A1AC350300021C171 /* CollectionViewController.m */; };
-		FB92C2311AC3505F0021C171 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB92C2301AC3505F0021C171 /* CollectionViewCell.m */; };
-		FB92C2341AC350BB0021C171 /* Dificultad.m in Sources */ = {isa = PBXBuildFile; fileRef = FB92C2331AC350BB0021C171 /* Dificultad.m */; };
-		FB92C2371AC3510D0021C171 /* Categoria.m in Sources */ = {isa = PBXBuildFile; fileRef = FB92C2361AC3510D0021C171 /* Categoria.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		130381381AC4D6B4000C5612 /* JuegoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JuegoViewController.h; sourceTree = "<group>"; };
+		130381391AC4D6B4000C5612 /* JuegoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JuegoViewController.m; sourceTree = "<group>"; };
+		1303813B1AC4D7A4000C5612 /* ScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoresViewController.h; sourceTree = "<group>"; };
+		1303813C1AC4D7A4000C5612 /* ScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoresViewController.m; sourceTree = "<group>"; };
 		13159FBB1AC228D30038084B /* Proyecto Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Proyecto Final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13159FBF1AC228D30038084B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13159FC01AC228D30038084B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -46,14 +48,6 @@
 		13159FD91AC228D30038084B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13159FDA1AC228D30038084B /* Proyecto_FinalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Proyecto_FinalTests.m; sourceTree = "<group>"; };
 		FB92C2241AC34DE70021C171 /* Bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bomb.png; sourceTree = "<group>"; };
-		FB92C2291AC350300021C171 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
-		FB92C22A1AC350300021C171 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
-		FB92C22F1AC3505F0021C171 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
-		FB92C2301AC3505F0021C171 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
-		FB92C2321AC350BB0021C171 /* Dificultad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dificultad.h; sourceTree = "<group>"; };
-		FB92C2331AC350BB0021C171 /* Dificultad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dificultad.m; sourceTree = "<group>"; };
-		FB92C2351AC3510D0021C171 /* Categoria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Categoria.h; sourceTree = "<group>"; };
-		FB92C2361AC3510D0021C171 /* Categoria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Categoria.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,18 +91,14 @@
 			children = (
 				FB92C2241AC34DE70021C171 /* Bomb.png */,
 				13159FC21AC228D30038084B /* AppDelegate.h */,
+				130381381AC4D6B4000C5612 /* JuegoViewController.h */,
+				130381391AC4D6B4000C5612 /* JuegoViewController.m */,
 				13159FC31AC228D30038084B /* AppDelegate.m */,
-				FB92C22F1AC3505F0021C171 /* CollectionViewCell.h */,
-				FB92C2301AC3505F0021C171 /* CollectionViewCell.m */,
 				13159FC51AC228D30038084B /* ViewController.h */,
 				13159FC61AC228D30038084B /* ViewController.m */,
 				13159FC81AC228D30038084B /* Main.storyboard */,
-				FB92C2321AC350BB0021C171 /* Dificultad.h */,
-				FB92C2331AC350BB0021C171 /* Dificultad.m */,
-				FB92C2351AC3510D0021C171 /* Categoria.h */,
-				FB92C2361AC3510D0021C171 /* Categoria.m */,
-				FB92C2291AC350300021C171 /* CollectionViewController.h */,
-				FB92C22A1AC350300021C171 /* CollectionViewController.m */,
+				1303813B1AC4D7A4000C5612 /* ScoresViewController.h */,
+				1303813C1AC4D7A4000C5612 /* ScoresViewController.m */,
 				13159FCB1AC228D30038084B /* Images.xcassets */,
 				13159FCD1AC228D30038084B /* LaunchScreen.xib */,
 				13159FBE1AC228D30038084B /* Supporting Files */,
@@ -244,11 +234,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				13159FC71AC228D30038084B /* ViewController.m in Sources */,
-				FB92C2311AC3505F0021C171 /* CollectionViewCell.m in Sources */,
+				1303813D1AC4D7A4000C5612 /* ScoresViewController.m in Sources */,
+				1303813A1AC4D6B4000C5612 /* JuegoViewController.m in Sources */,
 				13159FC41AC228D30038084B /* AppDelegate.m in Sources */,
-				FB92C22B1AC350300021C171 /* CollectionViewController.m in Sources */,
-				FB92C2341AC350BB0021C171 /* Dificultad.m in Sources */,
-				FB92C2371AC3510D0021C171 /* Categoria.m in Sources */,
 				13159FC11AC228D30038084B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UIPickerView *lDificultad;
 @property (strong, nonatomic) IBOutlet UIPickerView *lCategoria;
 
+- (IBAction)presionoJuega:(id)sender;
 @end
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -40,6 +40,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="presionoJuega:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SUh-OV-BM3"/>
                                     <segue destination="hOS-bW-yri" kind="presentation" id="mIZ-2b-67H"/>
                                 </connections>
                             </button>
@@ -56,20 +57,20 @@
             </objects>
             <point key="canvasLocation" x="48" y="416"/>
         </scene>
-        <!--View Controller-->
+        <!--Juego View Controller-->
         <scene sceneID="17S-ry-IYM">
             <objects>
-                <viewController id="hOS-bW-yri" sceneMemberID="viewController">
+                <viewController id="hOS-bW-yri" customClass="JuegoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rYO-vC-Yb7"/>
                         <viewControllerLayoutGuide type="bottom" id="esT-HS-CQX"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vhn-MX-Dn2">
+                    <view key="view" contentMode="scaleToFill" id="vhn-MX-Dn2" customClass="UITableViewCell">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Nfz-SB-8hS">
-                                <rect key="frame" x="16" y="28" width="288" height="291"/>
+                                <rect key="frame" x="16" y="119" width="288" height="291"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hN5-eU-dqS">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -260,33 +261,46 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdW-hm-WjC">
-                                <rect key="frame" x="55" y="370" width="50" height="50"/>
+                                <rect key="frame" x="16" y="61" width="50" height="50"/>
                                 <state key="normal" title="Bomb" image="Bomb.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="presionoOportunidad:" destination="hOS-bW-yri" eventType="touchUpInside" id="r2M-qm-nbV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVP-D7-vqp">
-                                <rect key="frame" x="168" y="380" width="39" height="30"/>
+                                <rect key="frame" x="265" y="81" width="39" height="30"/>
                                 <state key="normal" title="Menu">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ezU-OU-6dP" kind="presentation" id="VBK-pM-riL"/>
+                                    <action selector="presionoMenu:" destination="hOS-bW-yri" eventType="touchUpInside" id="ryc-Mz-nWp"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Texto a Adivinar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Z8-Sz-cCm">
+                                <rect key="frame" x="99" y="439" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="collviewMatrizJuego" destination="Nfz-SB-8hS" id="neN-ho-Scl"/>
+                        <outlet property="lblAdivina" destination="1Z8-Sz-cCm" id="fpL-7K-cwP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubo-jS-hIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="455" y="416"/>
         </scene>
-        <!--View Controller-->
+        <!--Scores View Controller-->
         <scene sceneID="Fg4-zq-p4q">
             <objects>
-                <viewController id="ezU-OU-6dP" sceneMemberID="viewController">
+                <viewController id="ezU-OU-6dP" customClass="ScoresViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GyZ-R2-yVT"/>
                         <viewControllerLayoutGuide type="bottom" id="fk1-V5-p3F"/>
