@@ -1,0 +1,7 @@
+Esta semana se trabajo en:
+-Pulir casos de uso y su priorización
+-Recalcular la complejidad de los casos de uso porque se disparaban las horas
+-Crear el xcode project
+-Generar una organización en Github y se asignó un repositorio dentro de la organización en Github
+-Se crearon las pantallas sin diseño porque quedó acordarse el diseño con los otros equipos creando juegos para el profesor
+-Se generaron ciertos outlets pero todavía no se terminaron de crear
