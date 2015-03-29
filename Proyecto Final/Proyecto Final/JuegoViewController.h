@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface JuegoViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UICollectionView *collviewMatrizJuego;
+
 @property (weak, nonatomic) IBOutlet UILabel *lblAdivina;
 
+@property (weak, nonatomic) IBOutlet UICollectionView *collViewMatrizImagenes;
 - (IBAction)presionoOportunidad:(id)sender;
 - (IBAction)presionoMenu:(id)sender;
 
