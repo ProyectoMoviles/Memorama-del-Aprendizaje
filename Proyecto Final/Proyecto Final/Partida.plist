@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>ID</key>
+		<string></string>
+		<key>Complejidad</key>
+		<string></string>
+		<key>Tiempo</key>
+		<integer>0</integer>
+		<key>Aciertos</key>
+		<integer>0</integer>
+		<key>Equivocaciones</key>
+		<integer>0</integer>
+		<key>Oportunidades</key>
+		<integer>0</integer>
+	</dict>
+</array>
+</plist>
