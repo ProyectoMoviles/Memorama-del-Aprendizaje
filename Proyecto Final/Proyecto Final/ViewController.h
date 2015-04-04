@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UILabel *lmain;
+@property (weak, nonatomic) IBOutlet UIButton *bjugar;
+@property (weak, nonatomic) IBOutlet UIButton *baceptar;
 
 @property (strong, nonatomic) IBOutlet UIPickerView *lDificultad;
-@property (strong, nonatomic) IBOutlet UIPickerView *lCategoria;
-
 - (IBAction)presionoJuega:(id)sender;
+- (IBAction)presionoAceptar:(id)sender;
 @end
-
