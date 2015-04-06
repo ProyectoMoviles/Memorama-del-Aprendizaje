@@ -16,6 +16,8 @@
 		13159FCC1AC228D30038084B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13159FCB1AC228D30038084B /* Images.xcassets */; };
 		13159FCF1AC228D30038084B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13159FCD1AC228D30038084B /* LaunchScreen.xib */; };
 		13159FDB1AC228D30038084B /* Proyecto_FinalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13159FDA1AC228D30038084B /* Proyecto_FinalTests.m */; };
+		133E2EED1AD1B811001F29A3 /* Elementos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 133E2EEC1AD1B811001F29A3 /* Elementos.plist */; };
+		133E2EEF1AD1B98E001F29A3 /* Categorias.plist in Resources */ = {isa = PBXBuildFile; fileRef = 133E2EEE1AD1B98E001F29A3 /* Categorias.plist */; };
 		13A97C141AC9C2FC00328706 /* Partida.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13A97C131AC9C2FC00328706 /* Partida.plist */; };
 		FB92C2251AC34DE70021C171 /* Bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = FB92C2241AC34DE70021C171 /* Bomb.png */; };
 /* End PBXBuildFile section */
@@ -48,6 +50,8 @@
 		13159FD41AC228D30038084B /* Proyecto FinalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Proyecto FinalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13159FD91AC228D30038084B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13159FDA1AC228D30038084B /* Proyecto_FinalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Proyecto_FinalTests.m; sourceTree = "<group>"; };
+		133E2EEC1AD1B811001F29A3 /* Elementos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Elementos.plist; sourceTree = "<group>"; };
+		133E2EEE1AD1B98E001F29A3 /* Categorias.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Categorias.plist; sourceTree = "<group>"; };
 		13A97C131AC9C2FC00328706 /* Partida.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Partida.plist; sourceTree = "<group>"; };
 		FB92C2241AC34DE70021C171 /* Bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bomb.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +104,8 @@
 				13159FC61AC228D30038084B /* ViewController.m */,
 				13159FC81AC228D30038084B /* Main.storyboard */,
 				13A97C131AC9C2FC00328706 /* Partida.plist */,
+				133E2EEC1AD1B811001F29A3 /* Elementos.plist */,
+				133E2EEE1AD1B98E001F29A3 /* Categorias.plist */,
 				1303813B1AC4D7A4000C5612 /* ScoresViewController.h */,
 				1303813C1AC4D7A4000C5612 /* ScoresViewController.m */,
 				13159FCB1AC228D30038084B /* Images.xcassets */,
@@ -218,8 +224,10 @@
 				13159FCA1AC228D30038084B /* Main.storyboard in Resources */,
 				13A97C141AC9C2FC00328706 /* Partida.plist in Resources */,
 				13159FCF1AC228D30038084B /* LaunchScreen.xib in Resources */,
+				133E2EEF1AD1B98E001F29A3 /* Categorias.plist in Resources */,
 				13159FCC1AC228D30038084B /* Images.xcassets in Resources */,
 				FB92C2251AC34DE70021C171 /* Bomb.png in Resources */,
+				133E2EED1AD1B811001F29A3 /* Elementos.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
