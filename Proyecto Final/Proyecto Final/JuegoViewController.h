@@ -7,13 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "celda.h"
 
-@interface JuegoViewController : UIViewController
+@interface JuegoViewController : UIViewController <UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UILabel *lblAdivina;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collViewMatrizImagenes;
 - (IBAction)presionoOportunidad:(id)sender;
 - (IBAction)presionoMenu:(id)sender;
+
+
+@property (strong, nonatomic)NSMutableArray *Matriz;
+@property (strong, nonatomic)NSDictionary *elemMatriz;
+@property (nonatomic)NSInteger cantidadElem;
 
 @end

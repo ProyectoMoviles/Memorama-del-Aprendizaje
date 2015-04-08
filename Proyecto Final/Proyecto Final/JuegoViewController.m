@@ -17,6 +17,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSString *pathPlist = [ [NSBundle mainBundle] pathForResource: @"Elementos" ofType: @"plist"];
+    self.Matriz = [[NSMutableArray alloc] initWithContentsOfFile: pathPlist];
+    self.cantidadElem = 0;
+    
+    /*NSArray *array = [self.elemMatriz objectForKey:@"IDCategoria"];
+    for (int j = 0; j < [array count]; j++) {
+        if ([[array objectAtIndex:j] isEqualToString:@"1"]) {
+            self.cantidadElem++;
+        }
+    }*/
+    
+    for (int i = 0; i < self.Matriz.count; i++) {
+        self.elemMatriz = self.Matriz[i];
+        if ([[self.elemMatriz objectForKey:@"IDCategoria"]isEqualToString:@"1"]) {
+            self.cantidadElem++;
+        }
+    }
+    NSLog(@"%ld",(long)self.cantidadElem);
+    NSLog(@"%ld",(long)self.Matriz.count);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,18 +63,18 @@
 #pragma mark - UICollectionView Datasource
 // 1
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
-    NSInteger cantidadElem = 0;//Poner la busqueda de elementos en la categoria actual
-    return cantidadElem;
+    return self.cantidadElem;
 }
 // 2
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
-    NSInteger cantidadCat = 0; //Poner la busqueda de categorias en el diccionario
+    NSInteger cantidadCat = 1; //Poner la busqueda de categorias en el diccionario
     return cantidadCat;
 }
 // 3
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = 0;
+    celda *cell = [cv dequeueReusableCellWithReuseIdentifier:@"elemento" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
+    
     return cell;
 }
 // 4
@@ -74,6 +93,21 @@
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     // No sabemos si se va a implementar el deseleccionado
 }
+
+#pragma mark – UICollectionViewDelegateFlowLayout
+
+// 1
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGSize retval = CGSizeMake(20, 20);
+    retval.height += 35; retval.width += 35; return retval;
+}
+
+// 3
+- (UIEdgeInsets)collectionView:
+(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(50, 20, 50, 20);
+}
+
 
 
 @end
