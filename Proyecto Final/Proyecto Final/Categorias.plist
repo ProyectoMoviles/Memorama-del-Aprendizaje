@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>ID</key>
-		<integer>1</integer>
+		<string>1</string>
 		<key>Nombre</key>
 		<string>Partes del Cuerpo</string>
 		<key>Descripcion</key>
@@ -12,7 +12,7 @@
 	</dict>
 	<dict>
 		<key>ID</key>
-		<integer>2</integer>
+		<string>2</string>
 		<key>Nombre</key>
 		<string>Animales</string>
 		<key>Descripcion</key>
