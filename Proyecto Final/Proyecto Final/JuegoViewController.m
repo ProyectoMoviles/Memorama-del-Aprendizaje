@@ -20,6 +20,7 @@
     NSString *pathPlist = [ [NSBundle mainBundle] pathForResource: @"Elementos" ofType: @"plist"];
     self.Matriz = [[NSMutableArray alloc] initWithContentsOfFile: pathPlist];
     self.cantidadElem = 0;
+    self.matrizFiltrada = [[NSMutableArray alloc]init];
     
     /*NSArray *array = [self.elemMatriz objectForKey:@"IDCategoria"];
     for (int j = 0; j < [array count]; j++) {
@@ -31,11 +32,19 @@
     for (int i = 0; i < self.Matriz.count; i++) {
         self.elemMatriz = self.Matriz[i];
         if ([[self.elemMatriz objectForKey:@"IDCategoria"]isEqualToString:@"1"]) {
+            self.matrizFiltrada[self.cantidadElem] = self.elemMatriz;
             self.cantidadElem++;
         }
     }
+    
+    /* Debugging */
     NSLog(@"%ld",(long)self.cantidadElem);
     NSLog(@"%ld",(long)self.Matriz.count);
+    for (int i = 0; i<self.cantidadElem; i++) {
+        NSString *nombre = [self.matrizFiltrada[i] objectForKey:@"Nombre"];
+        NSLog(nombre);
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

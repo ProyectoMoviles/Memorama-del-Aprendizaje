@@ -21,5 +21,6 @@
 @property (strong, nonatomic)NSMutableArray *Matriz;
 @property (strong, nonatomic)NSDictionary *elemMatriz;
 @property (nonatomic)NSInteger cantidadElem;
+@property (strong, nonatomic) NSMutableArray *matrizFiltrada;
 
 @end
