@@ -90,6 +90,11 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     celda *cell = [cv dequeueReusableCellWithReuseIdentifier:@"elemento" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
+    NSString *stringUrl = [self.matrizFiltrada[indexPath.row] objectForKey:@"ImgURL"];
+    NSURL *nsurl = [NSURL URLWithString: stringUrl];
+    NSData *data = [[NSData alloc]initWithContentsOfURL: nsurl];
+    UIImage *imagen = [UIImage imageWithData: data];
+    cell.imgCelda.image = imagen;
     return cell;
 }
 // 4
