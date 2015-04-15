@@ -8,7 +8,7 @@
 		<key>Nombre</key>
 		<string>Pelo</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://datodehoy.com/wp-content/uploads/2015/03/Pelo.jpg</string>
 		<key>Descripcion</key>
 		<string>Es el pelo de la cabeza</string>
 		<key>IDCategoria</key>
@@ -24,7 +24,7 @@
 		<key>Nombre</key>
 		<string>Frente</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://bodyphilosophyestetica.com/revista/wp-content/uploads/2012/11/Trucos-para-disimular-la-frente-ancha.jpg</string>
 		<key>Descripcion</key>
 		<string>Es la frente de la cabeza</string>
 		<key>IDCategoria</key>
@@ -40,7 +40,7 @@
 		<key>Nombre</key>
 		<string>Oreja</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://curiosidades.batanga.com/sites/curiosidades.batanga.com/files/imagecache/completa/5-partes-del-cuerpo-que-la-ciencia-puede-reemplazar-4.jpg</string>
 		<key>Descripcion</key>
 		<string>Es la oreja de la cabeza</string>
 		<key>IDCategoria</key>
@@ -56,7 +56,7 @@
 		<key>Nombre</key>
 		<string>Nariz</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://www.medciencia.com/wp-content/uploads/2013/12/nariz.jpg</string>
 		<key>Descripcion</key>
 		<string>Es la nariz de la cabeza</string>
 		<key>IDCategoria</key>
@@ -72,7 +72,7 @@
 		<key>Nombre</key>
 		<string>Ojo</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://noticias.starmedia.com/imagenes/2013/06/ojo-humano.jpg</string>
 		<key>Descripcion</key>
 		<string>Es el ojo de la cabeza</string>
 		<key>IDCategoria</key>
@@ -88,7 +88,7 @@
 		<key>Nombre</key>
 		<string>Boca</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://www.simpecado.com/wp-content/uploads/2014/02/labios.jpg</string>
 		<key>Descripcion</key>
 		<string>Es la boca de la cabeza</string>
 		<key>IDCategoria</key>
@@ -104,7 +104,7 @@
 		<key>Nombre</key>
 		<string>Cuello</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://www.kontrokultura.it/wp-content/uploads/2014/09/eliminare-rughe-dal-collo.jpg</string>
 		<key>Descripcion</key>
 		<string>Es el cuello del cuerpo</string>
 		<key>IDCategoria</key>
@@ -120,7 +120,7 @@
 		<key>Nombre</key>
 		<string>Hombro</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>https://classconnection.s3.amazonaws.com/927/flashcards/677927/jpg/shoulder1330622500926.jpg</string>
 		<key>Descripcion</key>
 		<string>Es el hombro del cuerpo</string>
 		<key>IDCategoria</key>
@@ -136,7 +136,7 @@
 		<key>Nombre</key>
 		<string>Codo</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://siemprehermosas.com/wp-content/uploads/2014/04/codos.jpg</string>
 		<key>Descripcion</key>
 		<string>Es el codo del cuerpo</string>
 		<key>IDCategoria</key>
@@ -152,7 +152,7 @@
 		<key>Nombre</key>
 		<string>Mano</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://www.noticiasggl.com/wp-content/uploads/2014/05/manos.jpg</string>
 		<key>Descripcion</key>
 		<string>Es la mano del brazo</string>
 		<key>IDCategoria</key>
@@ -168,7 +168,7 @@
 		<key>Nombre</key>
 		<string>Rodilla</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://energiaysalud.org/wp-content/uploads/2015/01/rodilla1.jpg</string>
 		<key>Descripcion</key>
 		<string>Es la rodilla de la pierna</string>
 		<key>IDCategoria</key>
@@ -184,7 +184,7 @@
 		<key>Nombre</key>
 		<string>Pie</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://www.consejosdetufarmaceutico.com/wp-content/uploads/2014/09/pies-1.jpg</string>
 		<key>Descripcion</key>
 		<string>Es el pie de la pierna</string>
 		<key>IDCategoria</key>
@@ -200,7 +200,7 @@
 		<key>Nombre</key>
 		<string>Perro</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://s01.s3c.es/imag/_v0/655x370/e/d/e/Como-Mantener-a-Mi-Perro-Fresco-en-Verano.jpg</string>
 		<key>Descripcion</key>
 		<string>Es el animal perro</string>
 		<key>IDCategoria</key>
@@ -216,7 +216,7 @@
 		<key>Nombre</key>
 		<string>Gato</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://st-listas.20minutos.es/images/2014-02/377888/4359469_640px.jpg?1398394299</string>
 		<key>Descripcion</key>
 		<string>Es el animal gato</string>
 		<key>IDCategoria</key>
@@ -232,7 +232,7 @@
 		<key>Nombre</key>
 		<string>Puerco</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://www.miambiente.com.mx/wp-content/puerco2.jpg</string>
 		<key>Descripcion</key>
 		<string>Es el animal puerco</string>
 		<key>IDCategoria</key>
@@ -248,7 +248,7 @@
 		<key>Nombre</key>
 		<string>Caballo</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://www.vientoyagua.cl/caballo.jpg</string>
 		<key>Descripcion</key>
 		<string>Es el animal caballo</string>
 		<key>IDCategoria</key>
@@ -264,7 +264,7 @@
 		<key>Nombre</key>
 		<string>Gallina</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://diccionarioimagenes.com/wp-content/uploads/2014/05/gallina.jpg</string>
 		<key>Descripcion</key>
 		<string>Es el animal gallina</string>
 		<key>IDCategoria</key>
@@ -280,7 +280,7 @@
 		<key>Nombre</key>
 		<string>Delfin</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://www.tapetus.pl/obrazki/n/88920_skok-delfin-woda.jpg</string>
 		<key>Descripcion</key>
 		<string>Es el animal delfin</string>
 		<key>IDCategoria</key>
@@ -296,7 +296,7 @@
 		<key>Nombre</key>
 		<string>Vaca</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>https://quitamelacorrea.files.wordpress.com/2012/03/vaca21.jpg</string>
 		<key>Descripcion</key>
 		<string>Es el animal vaca</string>
 		<key>IDCategoria</key>
@@ -312,7 +312,7 @@
 		<key>Nombre</key>
 		<string>Oveja</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://www.tecasrl.com/images/oveja.gif</string>
 		<key>Descripcion</key>
 		<string>Es el animal oveja</string>
 		<key>IDCategoria</key>
@@ -328,7 +328,7 @@
 		<key>Nombre</key>
 		<string>Pato</string>
 		<key>ImgURL</key>
-		<string></string>
+		<string>http://grupodongoyo.com/wp-content/uploads/2014/05/pato.jpg</string>
 		<key>Descripcion</key>
 		<string>Es el animal pato</string>
 		<key>IDCategoria</key>
