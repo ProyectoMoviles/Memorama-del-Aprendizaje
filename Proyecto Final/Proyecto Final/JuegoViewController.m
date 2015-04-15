@@ -36,6 +36,7 @@
             self.cantidadElem++;
         }
     }
+    [self generaRandomSeleccion];
     
     /* Debugging */
     NSLog(@"%ld",(long)self.cantidadElem);
@@ -44,7 +45,13 @@
         NSString *nombre = [self.matrizFiltrada[i] objectForKey:@"Nombre"];
         NSLog(nombre);
     }
-    
+
+}
+
+- (void) generaRandomSeleccion{
+    NSInteger r = arc4random_uniform(self.matrizFiltrada.count);
+    NSString *adivina = [self.matrizFiltrada[r] objectForKey:@"Nombre"];
+    self.lblAdivina.text = adivina;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,7 +79,7 @@
 #pragma mark - UICollectionView Datasource
 // 1
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
-    return self.cantidadElem;
+    return self.matrizFiltrada.count;
 }
 // 2
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
@@ -83,7 +90,6 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     celda *cell = [cv dequeueReusableCellWithReuseIdentifier:@"elemento" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
-    
     return cell;
 }
 // 4
@@ -97,7 +103,17 @@
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSString *textoPicado = [self.matrizFiltrada[indexPath.row] objectForKey:@"Nombre"];
     // Falta implementar el metodo de selecion
+    if ([self.lblAdivina.text isEqualToString: textoPicado]) {
+        [self.matrizFiltrada removeObjectAtIndex:indexPath.row];
+        NSLog(@"Adivinaste");
+        if (self.matrizFiltrada.count >0) {
+            [self generaRandomSeleccion];
+        }
+    }
+    [self.collViewMatrizImagenes reloadData];
+
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     // No sabemos si se va a implementar el deseleccionado
