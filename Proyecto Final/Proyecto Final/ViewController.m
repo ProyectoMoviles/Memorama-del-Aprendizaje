@@ -62,7 +62,6 @@
     
     n1 = [self.lDificultad selectedRowInComponent:0];
     self.dificultad = [_dataDificultad objectAtIndex:n1];
-    self.lbprueba.text = self.dificultad;
     
     _dataDificultad = @[@"Categoria 1", @"Categoria 2", @"Categoria 3"];
     // Data Connect

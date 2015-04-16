@@ -91,10 +91,12 @@
     celda *cell = [cv dequeueReusableCellWithReuseIdentifier:@"elemento" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
     NSString *stringUrl = [self.matrizFiltrada[indexPath.row] objectForKey:@"ImgURL"];
-    NSURL *nsurl = [NSURL URLWithString: stringUrl];
-    NSData *data = [[NSData alloc]initWithContentsOfURL: nsurl];
-    UIImage *imagen = [UIImage imageWithData: data];
-    cell.imgCelda.image = imagen;
+    //if(cell.imgURL!=stringUrl){
+        NSURL *nsurl = [NSURL URLWithString: stringUrl];
+        NSData *data = [[NSData alloc]initWithContentsOfURL: nsurl];
+        UIImage *imagen = [UIImage imageWithData: data];
+        cell.imgCelda.image = imagen;
+    //}
     return cell;
 }
 // 4
@@ -118,7 +120,6 @@
         }
     }
     [self.collViewMatrizImagenes reloadData];
-
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     // No sabemos si se va a implementar el deseleccionado
