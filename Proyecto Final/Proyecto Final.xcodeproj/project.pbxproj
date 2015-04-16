@@ -100,9 +100,9 @@
 			children = (
 				FB92C2241AC34DE70021C171 /* Bomb.png */,
 				13159FC21AC228D30038084B /* AppDelegate.h */,
-				130381381AC4D6B4000C5612 /* JuegoViewController.h */,
 				139F02201AD5E6D9007358C9 /* celda.h */,
 				139F02211AD5E6D9007358C9 /* celda.m */,
+				130381381AC4D6B4000C5612 /* JuegoViewController.h */,
 				130381391AC4D6B4000C5612 /* JuegoViewController.m */,
 				13159FC31AC228D30038084B /* AppDelegate.m */,
 				13159FC51AC228D30038084B /* ViewController.h */,

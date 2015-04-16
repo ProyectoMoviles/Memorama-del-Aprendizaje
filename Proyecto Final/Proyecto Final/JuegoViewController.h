@@ -17,10 +17,12 @@
 - (IBAction)presionoOportunidad:(id)sender;
 - (IBAction)presionoMenu:(id)sender;
 
-
 @property (strong, nonatomic)NSMutableArray *Matriz;
 @property (strong, nonatomic)NSDictionary *elemMatriz;
 @property (nonatomic)NSInteger cantidadElem;
 @property (strong, nonatomic) NSMutableArray *matrizFiltrada;
+
+@property NSString *dificultad;
+@property NSString *categoria;
 
 @end

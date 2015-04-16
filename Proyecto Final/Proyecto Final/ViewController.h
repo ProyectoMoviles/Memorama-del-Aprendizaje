@@ -13,8 +13,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *lmain;
 @property (weak, nonatomic) IBOutlet UIButton *bjugar;
 @property (weak, nonatomic) IBOutlet UIButton *baceptar;
+@property NSString *dificultad;
+@property NSString *categoria;
 
 @property (strong, nonatomic) IBOutlet UIPickerView *lDificultad;
 - (IBAction)presionoJuega:(id)sender;
 - (IBAction)presionoAceptar:(id)sender;
+
 @end
