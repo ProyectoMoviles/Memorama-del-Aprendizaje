@@ -17,8 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSString *pathPlist = [ [NSBundle mainBundle] pathForResource: @"Elementos" ofType: @"plist"];
-    self.Matriz = [[NSMutableArray alloc] initWithContentsOfFile: pathPlist];
+    NSString *filePath = [self dataFilePath];
+    NSString *plistPath = [ [NSBundle mainBundle] pathForResource: @"Elementos" ofType: @"plist"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath: filePath]){
+        self.Matriz = [[NSMutableArray alloc] initWithContentsOfFile: filePath];
+        NSLog(@"Ya existe");
+    }
+    else{
+        self.Matriz = [[NSMutableArray alloc]initWithContentsOfFile:plistPath];
+        [self.Matriz writeToFile: filePath atomically: YES];
+        NSLog(@"No existe todavia");
+    }
     self.cantidadElem = 0;
     self.matrizFiltrada = [[NSMutableArray alloc]init];
     
@@ -28,14 +37,25 @@
             self.cantidadElem++;
         }
     }*/
+    NSString *stringUrl;
+    
     
     for (int i = 0; i < self.Matriz.count; i++) {
         self.elemMatriz = self.Matriz[i];
+        if ([[self.elemMatriz objectForKey:@"ImgData"]length]==0) {
+            stringUrl = [self.elemMatriz objectForKey:@"ImgURL"];
+            NSURL *nsurl = [NSURL URLWithString: stringUrl];
+            NSData *data = [[NSData alloc]initWithContentsOfURL: nsurl];
+            [self.elemMatriz setValue:data forKey:@"ImgData"];
+            self.Matriz[i] = self.elemMatriz;
+        }
         if ([[self.elemMatriz objectForKey:@"IDCategoria"]isEqualToString:@"1"]) {
             self.matrizFiltrada[self.cantidadElem] = self.elemMatriz;
+            
             self.cantidadElem++;
         }
     }
+    [self.Matriz writeToFile: filePath atomically: YES];
     [self generaRandomSeleccion];
     
     /* Debugging */
@@ -46,6 +66,12 @@
         NSLog(nombre);
     }
 
+}
+
+- (NSString *) dataFilePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains ( NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex: 0];
+    return [documentsDirectory stringByAppendingPathComponent:@"Elementos.plist"];
 }
 
 - (void) generaRandomSeleccion{
@@ -90,9 +116,9 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     celda *cell = [cv dequeueReusableCellWithReuseIdentifier:@"elemento" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
-    NSString *stringUrl = [self.matrizFiltrada[indexPath.row] objectForKey:@"ImgURL"];
-    NSURL *nsurl = [NSURL URLWithString: stringUrl];
-    NSData *data = [[NSData alloc]initWithContentsOfURL: nsurl];
+    /*NSString *stringUrl = [self.matrizFiltrada[indexPath.row] objectForKey:@"ImgURL"];
+    NSURL *nsurl = [NSURL URLWithString: stringUrl];*/
+    NSData *data = [self.matrizFiltrada[indexPath.row] objectForKey:@"ImgData"];
     UIImage *imagen = [UIImage imageWithData: data];
     cell.imgCelda.image = imagen;
     return cell;
@@ -118,7 +144,6 @@
         }
     }
     [self.collViewMatrizImagenes reloadData];
-
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     // No sabemos si se va a implementar el deseleccionado
