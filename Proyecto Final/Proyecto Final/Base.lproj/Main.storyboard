@@ -154,7 +154,7 @@
                                     <segue destination="RAS-4j-udg" kind="presentation" identifier="catSegue" id="5E3-v6-3Qp"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="uLv-SI-UoT">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="uLv-SI-UoT">
                                 <rect key="frame" x="150" y="230" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -271,7 +271,6 @@
         <!--Navigation Controller-->
         <scene sceneID="8dO-DZ-uCM">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KPO-WI-Jws" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RAS-4j-udg" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="khp-C5-8QF">
@@ -283,6 +282,7 @@
                         <segue destination="hOS-bW-yri" kind="relationship" relationship="rootViewController" id="1pH-Uc-wDd"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KPO-WI-Jws" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1307" y="428"/>
         </scene>
@@ -310,6 +310,6 @@
         <image name="Bomb.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h6m-cw-oqJ"/>
+        <segue reference="5E3-v6-3Qp"/>
     </inferredMetricsTieBreakers>
 </document>
