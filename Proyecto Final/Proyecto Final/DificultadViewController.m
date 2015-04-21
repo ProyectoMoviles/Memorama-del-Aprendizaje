@@ -6,17 +6,17 @@
 //  Copyright (c) 2015 Iker Arbulu Lozano. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "DificultadViewController.h"
 #import "JuegoViewController.h"
 
-@interface ViewController ()
+@interface DificultadViewController ()
 {
     NSArray *arregloDifficultad;
     NSInteger n1;
 }
 @end
 
-@implementation ViewController
+@implementation DificultadViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,7 +52,7 @@
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     NSDictionary *object = arregloDifficultad[row];
-    return [object objectForKey: @"nombre"];
+    return [object objectForKey: @"Nombre"];
 }
 
 #pragma mark - Segues
@@ -61,9 +61,9 @@
     if ([[segue identifier] isEqualToString:@"difSegue"]) {
         JuegoViewController *controller = [segue destinationViewController];
         n1 = [self.lDificultad selectedRowInComponent:0];
-        self.categoria = [arregloDifficultad objectAtIndex:n1];
+        NSDictionary *object = arregloDifficultad[n1];
+        self.dificultad = [object objectForKey: @"ID"];
         controller.dificultad = self.dificultad;
-        controller.categoria = self.categoria;
     }
 }
 

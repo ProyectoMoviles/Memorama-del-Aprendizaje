@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ZO-8F-mOq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Dificultad View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="DificultadViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -19,45 +19,33 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8KZ-Rd-m4Z">
                                 <rect key="frame" x="0.0" y="87" width="320" height="162"/>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dificultad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRC-fz-O4H">
-                                <rect key="frame" x="124" y="58" width="121" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dificultad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOS-oq-sg7">
+                                <rect key="frame" x="124" y="72" width="73" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0R-Hg-dcV">
-                                <rect key="frame" x="139" y="243" width="42" height="30"/>
-                                <state key="normal" title="Juega">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="presionoJuega:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SUh-OV-BM3"/>
-                                    <segue destination="hOS-bW-yri" kind="presentation" identifier="juegoSegue" id="mIZ-2b-67H"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORc-zU-h3p">
-                                <rect key="frame" x="139" y="281" width="54" height="30"/>
+                                <rect key="frame" x="133" y="257" width="54" height="30"/>
                                 <state key="normal" title="Aceptar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="presionoAceptar:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6mh-xr-0Yx"/>
+                                    <segue destination="6yt-pG-0Xg" kind="show" identifier="difSegue" id="6Zm-L5-T66"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="nkw-cU-JiI"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="baceptar" destination="ORc-zU-h3p" id="XAp-wY-2xF"/>
-                        <outlet property="bjugar" destination="l0R-Hg-dcV" id="2OL-Lh-qpg"/>
                         <outlet property="lDificultad" destination="8KZ-Rd-m4Z" id="aJc-t0-nPL"/>
-                        <outlet property="lmain" destination="zRC-fz-O4H" id="F53-gZ-G46"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48" y="416"/>
+            <point key="canvasLocation" x="455" y="428"/>
         </scene>
         <!--Juego View Controller-->
         <scene sceneID="17S-ry-IYM">
@@ -72,31 +60,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdW-hm-WjC">
-                                <rect key="frame" x="16" y="61" width="50" height="50"/>
-                                <state key="normal" title="Bomb" image="Bomb.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <rect key="frame" x="254" y="422" width="50" height="50"/>
+                                <state key="normal" title="Bomb" image="Bomb.png"/>
                                 <connections>
                                     <action selector="presionoOportunidad:" destination="hOS-bW-yri" eventType="touchUpInside" id="r2M-qm-nbV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVP-D7-vqp">
-                                <rect key="frame" x="265" y="81" width="39" height="30"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="presionoMenu:" destination="hOS-bW-yri" eventType="touchUpInside" id="ryc-Mz-nWp"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Texto a Adivinar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Z8-Sz-cCm">
-                                <rect key="frame" x="99" y="439" width="122" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L1u-A2-erP">
-                                <rect key="frame" x="16" y="120" width="288" height="297"/>
+                                <rect key="frame" x="16" y="72" width="288" height="297"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hB3-Bn-1Ld">
                                     <size key="itemSize" width="66" height="62"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -127,9 +98,22 @@
                                     <outlet property="delegate" destination="hOS-bW-yri" id="9ea-x2-dPZ"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Texto a Adivinar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Z8-Sz-cCm">
+                                <rect key="frame" x="141" y="377" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="tEn-Je-oQW">
+                        <barButtonItem key="rightBarButtonItem" title="Menu" id="Bdt-W5-dKy">
+                            <connections>
+                                <segue destination="bF1-LB-QpW" kind="show" id="6bY-IH-CIU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="collViewMatrizImagenes" destination="L1u-A2-erP" id="sIR-kg-SOf"/>
@@ -138,7 +122,113 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubo-jS-hIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="455" y="416"/>
+            <point key="canvasLocation" x="1719" y="428"/>
+        </scene>
+        <!--Categoria View Controller-->
+        <scene sceneID="ttS-o1-ea6">
+            <objects>
+                <viewController id="6yt-pG-0Xg" customClass="CategoriaViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Swf-k2-1dw"/>
+                        <viewControllerLayoutGuide type="bottom" id="pqG-zZ-2Ne"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fpl-rn-6gY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categoria" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6k-SD-DXa">
+                                <rect key="frame" x="123" y="72" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="89h-3K-2Ow">
+                                <rect key="frame" x="0.0" y="101" width="320" height="162"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfR-Oy-5Ri">
+                                <rect key="frame" x="137" y="262" width="39" height="30"/>
+                                <state key="normal" title="Jugar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="RAS-4j-udg" kind="presentation" identifier="catSegue" id="5E3-v6-3Qp"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="uLv-SI-UoT">
+                                <rect key="frame" x="150" y="230" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="actIndicator" destination="uLv-SI-UoT" id="sCJ-3C-qZD"/>
+                        <outlet property="bjugar" destination="JfR-Oy-5Ri" id="gTb-xp-lLW"/>
+                        <outlet property="lCategoria" destination="89h-3K-2Ow" id="mlY-xC-laT"/>
+                        <outlet property="lcategoria" destination="N6k-SD-DXa" id="Y07-iO-anZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8RX-Sm-8oS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="428"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="JOJ-4n-hs8">
+            <objects>
+                <viewController id="bF1-LB-QpW" customClass="MenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fKT-QB-yjX"/>
+                        <viewControllerLayoutGuide type="bottom" id="qZ1-Tf-RD8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yz7-rf-E4f">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeV-f9-y3C">
+                                <rect key="frame" x="109" y="79" width="103" height="30"/>
+                                <state key="normal" title="Menu Principal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="7ZO-8F-mOq" kind="presentation" id="i7K-1S-XkN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xG6-Wv-Nfm">
+                                <rect key="frame" x="110" y="295" width="102" height="30"/>
+                                <state key="normal" title="Salir del Juego">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="bsalir:" destination="bF1-LB-QpW" eventType="touchUpInside" id="nvf-1O-n0l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5V-q1-Ft1">
+                                <rect key="frame" x="123" y="225" width="74" height="30"/>
+                                <state key="normal" title="Ver Scores">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ezU-OU-6dP" kind="show" id="KGm-x4-yHC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Err-TT-8ws">
+                                <rect key="frame" x="116" y="148" width="91" height="30"/>
+                                <state key="normal" title="Nuevo Juego">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="RAS-4j-udg" kind="presentation" id="h6m-cw-oqJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="x0M-BH-w9g"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Way-TG-Aps" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="1016"/>
         </scene>
         <!--Scores View Controller-->
         <scene sceneID="Fg4-zq-p4q">
@@ -152,6 +242,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g0u-FB-MtR">
+                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem title="Salir" id="hXD-wW-UUh"/>
+                                </items>
+                            </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hr9-up-yHA">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -163,12 +259,6 @@
                                     </items>
                                 </navigationBar>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g0u-FB-MtR">
-                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
-                                <items>
-                                    <barButtonItem title="Salir" id="hXD-wW-UUh"/>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -176,10 +266,50 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VAf-B3-kwY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="862" y="416"/>
+            <point key="canvasLocation" x="1719" y="1016"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8dO-DZ-uCM">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KPO-WI-Jws" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RAS-4j-udg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="khp-C5-8QF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hOS-bW-yri" kind="relationship" relationship="rootViewController" id="1pH-Uc-wDd"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1307" y="428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sLz-WA-9cn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7ZO-8F-mOq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g1F-Lw-9wD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="h4b-6n-mR8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O3E-b2-zju" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-89" y="428"/>
         </scene>
     </scenes>
     <resources>
         <image name="Bomb.png" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="h6m-cw-oqJ"/>
+    </inferredMetricsTieBreakers>
 </document>

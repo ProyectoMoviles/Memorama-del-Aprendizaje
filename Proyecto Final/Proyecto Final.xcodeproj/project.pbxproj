@@ -11,7 +11,6 @@
 		1303813D1AC4D7A4000C5612 /* ScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1303813C1AC4D7A4000C5612 /* ScoresViewController.m */; };
 		13159FC11AC228D30038084B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13159FC01AC228D30038084B /* main.m */; };
 		13159FC41AC228D30038084B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13159FC31AC228D30038084B /* AppDelegate.m */; };
-		13159FC71AC228D30038084B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13159FC61AC228D30038084B /* ViewController.m */; };
 		13159FCA1AC228D30038084B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13159FC81AC228D30038084B /* Main.storyboard */; };
 		13159FCC1AC228D30038084B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13159FCB1AC228D30038084B /* Images.xcassets */; };
 		13159FCF1AC228D30038084B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13159FCD1AC228D30038084B /* LaunchScreen.xib */; };
@@ -20,6 +19,10 @@
 		133E2EEF1AD1B98E001F29A3 /* Categorias.plist in Resources */ = {isa = PBXBuildFile; fileRef = 133E2EEE1AD1B98E001F29A3 /* Categorias.plist */; };
 		139F02221AD5E6D9007358C9 /* celda.m in Sources */ = {isa = PBXBuildFile; fileRef = 139F02211AD5E6D9007358C9 /* celda.m */; };
 		13A97C141AC9C2FC00328706 /* Partida.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13A97C131AC9C2FC00328706 /* Partida.plist */; };
+		7DF2441A1AE658D3007DAA2B /* Dificultades.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DF244191AE658D3007DAA2B /* Dificultades.plist */; };
+		7DF2441D1AE65EE9007DAA2B /* DificultadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF2441C1AE65EE9007DAA2B /* DificultadViewController.m */; };
+		7DF244201AE65F88007DAA2B /* CategoriaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF2441F1AE65F88007DAA2B /* CategoriaViewController.m */; };
+		7DF244261AE66C6F007DAA2B /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF244251AE66C6F007DAA2B /* MenuViewController.m */; };
 		FB92C2251AC34DE70021C171 /* Bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = FB92C2241AC34DE70021C171 /* Bomb.png */; };
 /* End PBXBuildFile section */
 
@@ -43,8 +46,6 @@
 		13159FC01AC228D30038084B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		13159FC21AC228D30038084B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		13159FC31AC228D30038084B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		13159FC51AC228D30038084B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		13159FC61AC228D30038084B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		13159FC91AC228D30038084B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13159FCB1AC228D30038084B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		13159FCE1AC228D30038084B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -56,6 +57,13 @@
 		139F02201AD5E6D9007358C9 /* celda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = celda.h; sourceTree = "<group>"; };
 		139F02211AD5E6D9007358C9 /* celda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = celda.m; sourceTree = "<group>"; };
 		13A97C131AC9C2FC00328706 /* Partida.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Partida.plist; sourceTree = "<group>"; };
+		7DF244191AE658D3007DAA2B /* Dificultades.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Dificultades.plist; sourceTree = "<group>"; };
+		7DF2441B1AE65EE9007DAA2B /* DificultadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DificultadViewController.h; sourceTree = "<group>"; };
+		7DF2441C1AE65EE9007DAA2B /* DificultadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DificultadViewController.m; sourceTree = "<group>"; };
+		7DF2441E1AE65F88007DAA2B /* CategoriaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriaViewController.h; sourceTree = "<group>"; };
+		7DF2441F1AE65F88007DAA2B /* CategoriaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriaViewController.m; sourceTree = "<group>"; };
+		7DF244241AE66C6F007DAA2B /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		7DF244251AE66C6F007DAA2B /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		FB92C2241AC34DE70021C171 /* Bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bomb.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,23 +106,28 @@
 		13159FBD1AC228D30038084B /* Proyecto Final */ = {
 			isa = PBXGroup;
 			children = (
-				FB92C2241AC34DE70021C171 /* Bomb.png */,
 				13159FC21AC228D30038084B /* AppDelegate.h */,
+				13159FC31AC228D30038084B /* AppDelegate.m */,
 				139F02201AD5E6D9007358C9 /* celda.h */,
 				139F02211AD5E6D9007358C9 /* celda.m */,
 				130381381AC4D6B4000C5612 /* JuegoViewController.h */,
 				130381391AC4D6B4000C5612 /* JuegoViewController.m */,
-				13159FC31AC228D30038084B /* AppDelegate.m */,
-				13159FC51AC228D30038084B /* ViewController.h */,
-				13159FC61AC228D30038084B /* ViewController.m */,
+				7DF2441B1AE65EE9007DAA2B /* DificultadViewController.h */,
+				7DF2441C1AE65EE9007DAA2B /* DificultadViewController.m */,
+				7DF2441E1AE65F88007DAA2B /* CategoriaViewController.h */,
+				7DF2441F1AE65F88007DAA2B /* CategoriaViewController.m */,
 				13159FC81AC228D30038084B /* Main.storyboard */,
+				7DF244241AE66C6F007DAA2B /* MenuViewController.h */,
+				7DF244251AE66C6F007DAA2B /* MenuViewController.m */,
 				13A97C131AC9C2FC00328706 /* Partida.plist */,
 				133E2EEC1AD1B811001F29A3 /* Elementos.plist */,
 				133E2EEE1AD1B98E001F29A3 /* Categorias.plist */,
+				7DF244191AE658D3007DAA2B /* Dificultades.plist */,
 				1303813B1AC4D7A4000C5612 /* ScoresViewController.h */,
 				1303813C1AC4D7A4000C5612 /* ScoresViewController.m */,
 				13159FCB1AC228D30038084B /* Images.xcassets */,
 				13159FCD1AC228D30038084B /* LaunchScreen.xib */,
+				FB92C2241AC34DE70021C171 /* Bomb.png */,
 				13159FBE1AC228D30038084B /* Supporting Files */,
 			);
 			path = "Proyecto Final";
@@ -231,6 +244,7 @@
 				13159FCF1AC228D30038084B /* LaunchScreen.xib in Resources */,
 				133E2EEF1AD1B98E001F29A3 /* Categorias.plist in Resources */,
 				13159FCC1AC228D30038084B /* Images.xcassets in Resources */,
+				7DF2441A1AE658D3007DAA2B /* Dificultades.plist in Resources */,
 				FB92C2251AC34DE70021C171 /* Bomb.png in Resources */,
 				133E2EED1AD1B811001F29A3 /* Elementos.plist in Resources */,
 			);
@@ -250,10 +264,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13159FC71AC228D30038084B /* ViewController.m in Sources */,
 				1303813D1AC4D7A4000C5612 /* ScoresViewController.m in Sources */,
+				7DF244201AE65F88007DAA2B /* CategoriaViewController.m in Sources */,
 				1303813A1AC4D6B4000C5612 /* JuegoViewController.m in Sources */,
+				7DF244261AE66C6F007DAA2B /* MenuViewController.m in Sources */,
 				139F02221AD5E6D9007358C9 /* celda.m in Sources */,
+				7DF2441D1AE65EE9007DAA2B /* DificultadViewController.m in Sources */,
 				13159FC41AC228D30038084B /* AppDelegate.m in Sources */,
 				13159FC11AC228D30038084B /* main.m in Sources */,
 			);

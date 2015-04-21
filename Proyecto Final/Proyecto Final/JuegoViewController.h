@@ -15,7 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collViewMatrizImagenes;
 - (IBAction)presionoOportunidad:(id)sender;
-- (IBAction)presionoMenu:(id)sender;
 
 @property (strong, nonatomic)NSMutableArray *Matriz;
 @property (strong, nonatomic)NSDictionary *elemMatriz;

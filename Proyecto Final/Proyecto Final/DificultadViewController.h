@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
-@property (weak, nonatomic) IBOutlet UIButton *baceptar;
+@interface DificultadViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 @property NSString *dificultad;
-@property NSString *categoria;
 @property (strong, nonatomic) IBOutlet UIPickerView *lDificultad;
+
+
+
 @end

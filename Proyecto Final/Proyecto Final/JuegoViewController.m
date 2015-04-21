@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     NSString *filePath = [self dataFilePath];
     NSString *plistPath = [ [NSBundle mainBundle] pathForResource: @"Elementos" ofType: @"plist"];
@@ -39,7 +40,6 @@
     }*/
     NSString *stringUrl;
     
-    
     for (int i = 0; i < self.Matriz.count; i++) {
         self.elemMatriz = self.Matriz[i];
         if ([[self.elemMatriz objectForKey:@"ImgData"]length]==0) {
@@ -49,7 +49,7 @@
             [self.elemMatriz setValue:data forKey:@"ImgData"];
             self.Matriz[i] = self.elemMatriz;
         }
-        if ([[self.elemMatriz objectForKey:@"IDCategoria"]isEqualToString:@"1"]) {
+        if ([[self.elemMatriz objectForKey:@"IDCategoria"]isEqualToString:self.categoria]) {
             self.matrizFiltrada[self.cantidadElem] = self.elemMatriz;
             
             self.cantidadElem++;
@@ -96,9 +96,6 @@
 */
 
 - (IBAction)presionoOportunidad:(id)sender {
-}
-
-- (IBAction)presionoMenu:(id)sender {
 }
 
 
@@ -162,7 +159,5 @@
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(50, 20, 50, 20);
 }
-
-
 
 @end
