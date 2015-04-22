@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ZO-8F-mOq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ZO-8F-mOq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--Dificultad View Controller-->
@@ -60,7 +60,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdW-hm-WjC">
-                                <rect key="frame" x="254" y="422" width="50" height="50"/>
+                                <rect key="frame" x="254" y="412" width="50" height="50"/>
                                 <state key="normal" title="Bomb" image="Bomb.png"/>
                                 <connections>
                                     <action selector="presionoOportunidad:" destination="hOS-bW-yri" eventType="touchUpInside" id="r2M-qm-nbV"/>
@@ -82,12 +82,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="66" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1SR-tx-hkr">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1SR-tx-hkr">
                                                     <rect key="frame" x="0.0" y="0.0" width="66" height="62"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="1SR-tx-hkr" secondAttribute="trailing" id="5Wv-Dl-Rrl"/>
+                                            <constraint firstItem="1SR-tx-hkr" firstAttribute="top" secondItem="vlC-Xa-zGC" secondAttribute="top" id="Kog-yx-2yb"/>
+                                            <constraint firstItem="1SR-tx-hkr" firstAttribute="leading" secondItem="vlC-Xa-zGC" secondAttribute="leading" id="byE-jx-gLz"/>
+                                            <constraint firstAttribute="bottom" secondItem="1SR-tx-hkr" secondAttribute="bottom" id="y1a-XU-Rgz"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="imgCelda" destination="1SR-tx-hkr" id="4Mz-5F-gxp"/>
                                         </connections>
@@ -98,8 +104,32 @@
                                     <outlet property="delegate" destination="hOS-bW-yri" id="9ea-x2-dPZ"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Texto a Adivinar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Z8-Sz-cCm">
-                                <rect key="frame" x="141" y="377" width="122" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSN-ge-lyf">
+                                <rect key="frame" x="16" y="441" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKV-3q-S3P">
+                                <rect key="frame" x="124" y="441" width="72" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tiempo:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZk-yc-IXc">
+                                <rect key="frame" x="22" y="412" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Puntos:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D56-Az-L5K">
+                                <rect key="frame" x="129" y="412" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Texto a Adivinar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Z8-Sz-cCm">
+                                <rect key="frame" x="22" y="377" width="282" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -118,6 +148,7 @@
                     <connections>
                         <outlet property="collViewMatrizImagenes" destination="L1u-A2-erP" id="sIR-kg-SOf"/>
                         <outlet property="lblAdivina" destination="1Z8-Sz-cCm" id="fpL-7K-cwP"/>
+                        <outlet property="lblTiempoJuego" destination="BSN-ge-lyf" id="4iw-Sx-ipP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubo-jS-hIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -310,6 +341,6 @@
         <image name="Bomb.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5E3-v6-3Qp"/>
+        <segue reference="h6m-cw-oqJ"/>
     </inferredMetricsTieBreakers>
 </document>

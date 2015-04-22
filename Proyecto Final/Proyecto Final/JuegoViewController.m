@@ -18,8 +18,12 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
+    
     NSString *filePath = [self dataFilePath];
+    
     NSString *plistPath = [ [NSBundle mainBundle] pathForResource: @"Elementos" ofType: @"plist"];
+    
+    //Revisa si el plist ya existe en la carpeta de datos o si se tiene que guardar
     if ([[NSFileManager defaultManager] fileExistsAtPath: filePath]){
         self.Matriz = [[NSMutableArray alloc] initWithContentsOfFile: filePath];
         NSLog(@"Ya existe");
@@ -29,17 +33,14 @@
         [self.Matriz writeToFile: filePath atomically: YES];
         NSLog(@"No existe todavia");
     }
+    
     self.cantidadElem = 0;
+    
     self.matrizFiltrada = [[NSMutableArray alloc]init];
     
-    /*NSArray *array = [self.elemMatriz objectForKey:@"IDCategoria"];
-    for (int j = 0; j < [array count]; j++) {
-        if ([[array objectAtIndex:j] isEqualToString:@"1"]) {
-            self.cantidadElem++;
-        }
-    }*/
     NSString *stringUrl;
     
+    //Se cargan las imagenes si esque no se encuentra cargados los datos del plist
     for (int i = 0; i < self.Matriz.count; i++) {
         self.elemMatriz = self.Matriz[i];
         if ([[self.elemMatriz objectForKey:@"ImgData"]length]==0) {
@@ -56,7 +57,16 @@
         }
     }
     [self.Matriz writeToFile: filePath atomically: YES];
+    
     [self generaRandomSeleccion];
+    
+    //inicializar timer
+    [self startTime];
+    
+    //agregar notificaciones
+    UIApplication *app = [UIApplication sharedApplication];
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(mandadoAlBackground:) name: UIApplicationDidEnterBackgroundNotification object: app];
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(regresoDeBackground:) name: UIApplicationDidBecomeActiveNotification object: app];
     
     /* Debugging */
     NSLog(@"%ld",(long)self.cantidadElem);
@@ -68,6 +78,36 @@
 
 }
 
+#pragma mark - Timer
+- (void) imprimirTimer{
+    int currentTime = [self.lblTiempoJuego.text intValue];
+    int newTime = currentTime + 1;
+    self.lblTiempoJuego.text = [NSString stringWithFormat:@"%d", newTime];
+}
+
+- (void) startTime{
+    self.myTicker = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(imprimirTimer) userInfo:nil repeats:YES];
+}
+
+- (void) stopTime{
+    [self.myTicker invalidate];
+}
+
+- (void) resetTime{
+    
+}
+
+#pragma mark - Notificaciones
+
+- (void) mandadoAlBackground: (NSNotification *) notification{
+    [self stopTime];
+}
+
+- (void) regresoDeBackground: (NSNotification *) notification{
+    [self startTime];
+}
+
+#pragma mark - File Path Plist
 - (NSString *) dataFilePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains ( NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex: 0];
@@ -95,6 +135,7 @@
 }
 */
 
+#pragma mark - Oportunidad
 - (IBAction)presionoOportunidad:(id)sender {
 }
 
@@ -113,8 +154,6 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     celda *cell = [cv dequeueReusableCellWithReuseIdentifier:@"elemento" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
-    /*NSString *stringUrl = [self.matrizFiltrada[indexPath.row] objectForKey:@"ImgURL"];
-    NSURL *nsurl = [NSURL URLWithString: stringUrl];*/
     NSData *data = [self.matrizFiltrada[indexPath.row] objectForKey:@"ImgData"];
     UIImage *imagen = [UIImage imageWithData: data];
     cell.imgCelda.image = imagen;
