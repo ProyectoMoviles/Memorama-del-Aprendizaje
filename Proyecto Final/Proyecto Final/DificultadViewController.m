@@ -63,7 +63,9 @@
         n1 = [self.lDificultad selectedRowInComponent:0];
         NSDictionary *object = arregloDifficultad[n1];
         self.dificultad = [object objectForKey: @"ID"];
+        self.cantidad = [object objectForKey: @"Cantidad"];
         controller.dificultad = self.dificultad;
+        controller.cantidad = self.cantidad;
     }
 }
 

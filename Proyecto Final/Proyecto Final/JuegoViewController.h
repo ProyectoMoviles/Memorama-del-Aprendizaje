@@ -23,5 +23,6 @@
 
 @property NSString *dificultad;
 @property NSString *categoria;
+@property NSNumber *cantidad;
 
 @end

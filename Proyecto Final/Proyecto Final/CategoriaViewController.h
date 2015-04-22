@@ -11,10 +11,9 @@
 @interface CategoriaViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 @property NSString *dificultad;
 @property NSString *categoria;
+@property NSNumber *cantidad;
 @property (strong, nonatomic) IBOutlet UIPickerView *lCategoria;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *actIndicator;
 @property (weak, nonatomic) IBOutlet UIButton *bjugar;
 @property (weak, nonatomic) IBOutlet UILabel *lcategoria;
-
-
 @end

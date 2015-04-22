@@ -10,8 +10,6 @@
 
 @interface DificultadViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 @property NSString *dificultad;
+@property NSNumber *cantidad;
 @property (strong, nonatomic) IBOutlet UIPickerView *lDificultad;
-
-
-
 @end

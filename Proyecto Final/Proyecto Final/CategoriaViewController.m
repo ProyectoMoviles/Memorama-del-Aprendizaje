@@ -73,6 +73,7 @@
         self.categoria = [object objectForKey: @"ID"];
         controller.categoria = self.categoria;
         controller.dificultad = self.dificultad;
+        controller.cantidad = self.cantidad;
     }
 }
 @end

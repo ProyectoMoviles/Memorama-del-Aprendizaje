@@ -8,7 +8,7 @@
 		<key>Nombre</key>
 		<string>Facil</string>
 		<key>Cantidad</key>
-		<string>4</string>
+		<integer>4</integer>
 	</dict>
 	<dict>
 		<key>ID</key>
@@ -16,7 +16,7 @@
 		<key>Nombre</key>
 		<string>Regular</string>
 		<key>Cantidad</key>
-		<string>16</string>
+		<integer>16</integer>
 	</dict>
 	<dict>
 		<key>ID</key>
@@ -24,7 +24,7 @@
 		<key>Nombre</key>
 		<string>Dificil</string>
 		<key>Cantidad</key>
-		<string>32</string>
+		<integer>32</integer>
 	</dict>
 </array>
 </plist>
