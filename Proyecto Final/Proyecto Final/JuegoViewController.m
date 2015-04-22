@@ -58,6 +58,10 @@
     }
     [self.Matriz writeToFile: filePath atomically: YES];
     
+    if (self.cantidadElem > [self.cantidad integerValue]) {
+        self.cantidadElem = [self.cantidad integerValue];
+    }
+    
     [self generaRandomSeleccion];
     
     //inicializar timer
@@ -115,7 +119,7 @@
 }
 
 - (void) generaRandomSeleccion{
-    NSInteger r = arc4random_uniform(self.matrizFiltrada.count);
+    NSInteger r = arc4random_uniform(self.cantidadElem);
     NSString *adivina = [self.matrizFiltrada[r] objectForKey:@"Nombre"];
     self.lblAdivina.text = adivina;
 }
@@ -143,7 +147,7 @@
 #pragma mark - UICollectionView Datasource
 // 1
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
-    return self.matrizFiltrada.count;
+    return self.cantidadElem;
 }
 // 2
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
@@ -174,6 +178,7 @@
     // Falta implementar el metodo de selecion
     if ([self.lblAdivina.text isEqualToString: textoPicado]) {
         [self.matrizFiltrada removeObjectAtIndex:indexPath.row];
+        self.cantidadElem--;
         NSLog(@"Adivinaste");
         if (self.matrizFiltrada.count >0) {
             [self generaRandomSeleccion];
