@@ -7,6 +7,7 @@
 //
 
 #import "MenuViewController.h"
+#import "JuegoViewController.h"
 
 @interface MenuViewController ()
 
@@ -36,5 +37,16 @@
 
 - (IBAction)bsalir:(id)sender {
     exit(0);
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"reiniciar"]) {
+        
+        JuegoViewController *controller = [[[segue destinationViewController]viewControllers]objectAtIndex:0];
+        
+        controller.categoria = self.categoria;
+        controller.dificultad = self.dificultad;
+        controller.cantidad = self.cantidad;
+    }
 }
 @end

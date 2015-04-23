@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface MenuViewController : UIViewController
+
+@property NSString *dificultad;
+@property NSString *categoria;
+@property NSNumber *cantidad;
+
 - (IBAction)bsalir:(id)sender;
 @end
