@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ZO-8F-mOq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ZO-8F-mOq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Dificultad View Controller-->
@@ -140,7 +140,7 @@
                     <navigationItem key="navigationItem" id="tEn-Je-oQW">
                         <barButtonItem key="rightBarButtonItem" title="Menu" id="Bdt-W5-dKy">
                             <connections>
-                                <segue destination="bF1-LB-QpW" kind="show" id="6bY-IH-CIU"/>
+                                <segue destination="bF1-LB-QpW" kind="show" identifier="menu" id="6bY-IH-CIU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -248,7 +248,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="RAS-4j-udg" kind="presentation" id="h6m-cw-oqJ"/>
+                                    <segue destination="RAS-4j-udg" kind="presentation" identifier="reiniciar" id="RVa-80-wmX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -304,6 +304,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RAS-4j-udg" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="khp-C5-8QF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -341,6 +342,6 @@
         <image name="Bomb.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h6m-cw-oqJ"/>
+        <segue reference="RVa-80-wmX"/>
     </inferredMetricsTieBreakers>
 </document>

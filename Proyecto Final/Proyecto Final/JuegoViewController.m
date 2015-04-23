@@ -7,6 +7,7 @@
 //
 
 #import "JuegoViewController.h"
+#import "MenuViewController.h"
 
 @interface JuegoViewController ()
 
@@ -202,6 +203,17 @@
 - (UIEdgeInsets)collectionView:
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(50, 20, 50, 20);
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"menu"]) {
+        
+        MenuViewController *controller = [segue destinationViewController];
+        
+        controller.categoria = self.categoria;
+        controller.dificultad = self.dificultad;
+        controller.cantidad = self.cantidad;
+    }
 }
 
 @end
