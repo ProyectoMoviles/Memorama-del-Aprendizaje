@@ -35,4 +35,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblTiempoJuego;
 @property (strong,nonatomic) NSTimer *myTicker;
 
+@property NSInteger tiempoIniciaPalabra;
+@property NSInteger tiempoAdivinaPalabra;
+@property (weak, nonatomic) IBOutlet UILabel *lblScore;
+
+
 @end
