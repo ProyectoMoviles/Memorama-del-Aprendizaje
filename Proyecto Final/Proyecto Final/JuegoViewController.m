@@ -123,6 +123,7 @@
     NSInteger r = arc4random_uniform(self.cantidadElem);
     NSString *adivina = [self.matrizFiltrada[r] objectForKey:@"Nombre"];
     self.lblAdivina.text = adivina;
+    self.tiempoIniciaPalabra = [self.lblTiempoJuego.text intValue];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -180,10 +181,14 @@
     if ([self.lblAdivina.text isEqualToString: textoPicado]) {
         [self.matrizFiltrada removeObjectAtIndex:indexPath.row];
         self.cantidadElem--;
+        [self atino];
         NSLog(@"Adivinaste");
         if (self.matrizFiltrada.count >0) {
             [self generaRandomSeleccion];
         }
+    }
+    else{
+        [self equivoco];
     }
     [self.collViewMatrizImagenes reloadData];
 }
@@ -213,6 +218,39 @@
         controller.categoria = self.categoria;
         controller.dificultad = self.dificultad;
         controller.cantidad = self.cantidad;
+    }
+}
+
+#pragma mark - Score
+
+- (void) atino{
+    self.tiempoAdivinaPalabra = [self.lblTiempoJuego.text intValue];
+    NSInteger tiempoAdiv = self.tiempoAdivinaPalabra - self.tiempoIniciaPalabra;
+    NSInteger score = [self.lblScore.text intValue];
+    if (tiempoAdiv > 5) {
+        if (tiempoAdiv > 10) {
+            if (tiempoAdiv > 15) {
+                score+=25;
+            }
+            else{
+                score+=50;
+            }
+        }
+        else{
+            score+=75;
+        }
+    }
+    else{
+        score+=100;
+    }
+    self.lblScore.text = [NSString stringWithFormat:@"%ld", (long)score];
+}
+
+- (void) equivoco{
+    NSInteger score = [self.lblScore.text intValue];
+    if (score >= 10) {
+        score-=10;
+        self.lblScore.text = [NSString stringWithFormat:@"%ld", (long)score];
     }
 }
 
