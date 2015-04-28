@@ -44,6 +44,7 @@
     //Se cargan las imagenes si esque no se encuentra cargados los datos del plist
     for (int i = 0; i < self.Matriz.count; i++) {
         self.elemMatriz = self.Matriz[i];
+        [self.elemMatriz setObject:@"habilitado" forKey:@"Disponible"];
         if ([[self.elemMatriz objectForKey:@"ImgData"]length]==0) {
             stringUrl = [self.elemMatriz objectForKey:@"ImgURL"];
             NSURL *nsurl = [NSURL URLWithString: stringUrl];
@@ -67,6 +68,9 @@
     
     //inicializar timer
     [self startTime];
+    
+    //inicializar oportunidad presionada en 0
+    self.oportunidadPresionada = false;
     
     //agregar notificaciones
     UIApplication *app = [UIApplication sharedApplication];
@@ -120,8 +124,8 @@
 }
 
 - (void) generaRandomSeleccion{
-    NSInteger r = arc4random_uniform(self.cantidadElem);
-    NSString *adivina = [self.matrizFiltrada[r] objectForKey:@"Nombre"];
+    self.indiceAdivina = arc4random_uniform(self.cantidadElem);
+    NSString *adivina = [self.matrizFiltrada[self.indiceAdivina] objectForKey:@"Nombre"];
     self.lblAdivina.text = adivina;
     self.tiempoIniciaPalabra = [self.lblTiempoJuego.text intValue];
 }
@@ -143,6 +147,24 @@
 
 #pragma mark - Oportunidad
 - (IBAction)presionoOportunidad:(id)sender {
+    if (self.cantidadElem>1) {
+        if (!self.oportunidadPresionada) {
+            self.oportunidadPresionada = true;
+            if (self.indiceAdivina > self.cantidadElem/2) {
+                //Desaparecer la mitad de arriba
+                for (int i=0; i<self.cantidadElem/2; i++) {
+                    [self.matrizFiltrada[i] setValue:@"deshabilitado" forKey:@"Disponible"];
+                }
+            }
+            else{
+                //Desaparecer la mitad de abajo
+                for (int i=self.cantidadElem/2; i<self.cantidadElem; i++) {
+                    [self.matrizFiltrada[i] setValue:@"deshabilitado" forKey:@"Disponible"];
+                }
+            }
+            [self.collViewMatrizImagenes reloadData];
+        }
+    }
 }
 
 
@@ -160,9 +182,14 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     celda *cell = [cv dequeueReusableCellWithReuseIdentifier:@"elemento" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
-    NSData *data = [self.matrizFiltrada[indexPath.row] objectForKey:@"ImgData"];
-    UIImage *imagen = [UIImage imageWithData: data];
-    cell.imgCelda.image = imagen;
+    if ([[self.matrizFiltrada[indexPath.row] objectForKey:@"Disponible"]isEqualToString:@"habilitado"]) {
+        NSData *data = [self.matrizFiltrada[indexPath.row] objectForKey:@"ImgData"];
+        UIImage *imagen = [UIImage imageWithData: data];
+        cell.imgCelda.image = imagen;
+    }
+    else{
+        cell.imgCelda.image = nil;
+    }
     return cell;
 }
 // 4
@@ -177,7 +204,6 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *textoPicado = [self.matrizFiltrada[indexPath.row] objectForKey:@"Nombre"];
-    // Falta implementar el metodo de selecion
     if ([self.lblAdivina.text isEqualToString: textoPicado]) {
         [self.matrizFiltrada removeObjectAtIndex:indexPath.row];
         self.cantidadElem--;

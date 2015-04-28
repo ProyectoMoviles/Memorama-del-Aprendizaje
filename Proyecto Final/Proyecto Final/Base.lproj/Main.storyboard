@@ -63,7 +63,7 @@
                                 <rect key="frame" x="254" y="412" width="50" height="50"/>
                                 <state key="normal" title="Bomb" image="Bomb.png"/>
                                 <connections>
-                                    <action selector="presionoOportunidad:" destination="hOS-bW-yri" eventType="touchUpInside" id="r2M-qm-nbV"/>
+                                    <action selector="presionoOportunidad:" destination="hOS-bW-yri" eventType="touchUpInside" id="eom-pP-Cfk"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L1u-A2-erP">
