@@ -167,6 +167,23 @@
     }
 }
 
+- (void)recuperarOportunidad{
+    self.oportunidadPresionada = false;
+    if (self.indiceAdivina > self.cantidadElem/2) {
+        //Desaparecer la mitad de arriba
+        for (int i=0; i<self.cantidadElem/2; i++) {
+            [self.matrizFiltrada[i] setValue:@"habilitado" forKey:@"Disponible"];
+        }
+    }
+    else{
+        //Desaparecer la mitad de abajo
+        for (int i=self.cantidadElem/2; i<self.cantidadElem; i++) {
+            [self.matrizFiltrada[i] setValue:@"habilitado" forKey:@"Disponible"];
+        }
+    }
+    [self.collViewMatrizImagenes reloadData];
+}
+
 
 #pragma mark - UICollectionView Datasource
 // 1
@@ -205,6 +222,7 @@
 {
     NSString *textoPicado = [self.matrizFiltrada[indexPath.row] objectForKey:@"Nombre"];
     if ([self.lblAdivina.text isEqualToString: textoPicado]) {
+        [self recuperarOportunidad];
         [self.matrizFiltrada removeObjectAtIndex:indexPath.row];
         self.cantidadElem--;
         [self atino];
