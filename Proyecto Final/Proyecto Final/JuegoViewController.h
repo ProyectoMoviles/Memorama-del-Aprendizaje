@@ -19,12 +19,16 @@
 
 //método de bombita
 - (IBAction)presionoOportunidad:(id)sender;
+@property NSInteger indiceAdivina;
+@property BOOL oportunidadPresionada;
+@property NSInteger oportunidadesUsadas;
 
 //variables de la matriz de objetos
 @property (strong, nonatomic)NSMutableArray *Matriz;
-@property (strong, nonatomic)NSDictionary *elemMatriz;
+@property (strong, nonatomic)NSMutableDictionary *elemMatriz;
 @property (nonatomic)NSInteger cantidadElem;
 @property (strong, nonatomic) NSMutableArray *matrizFiltrada;
+@property (strong, nonatomic) NSMutableArray *matrizRandomizada;
 
 //Parametros para matriz de dificultad y categoría
 @property NSString *dificultad;
@@ -35,9 +39,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblTiempoJuego;
 @property (strong,nonatomic) NSTimer *myTicker;
 
+//Variables del Score
 @property NSInteger tiempoIniciaPalabra;
 @property NSInteger tiempoAdivinaPalabra;
 @property (weak, nonatomic) IBOutlet UILabel *lblScore;
-
 
 @end

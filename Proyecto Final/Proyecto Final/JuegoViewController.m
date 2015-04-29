@@ -20,6 +20,8 @@
     
     // Do any additional setup after loading the view.
     
+    self.oportunidadesUsadas = 0;
+    
     NSString *filePath = [self dataFilePath];
     
     NSString *plistPath = [ [NSBundle mainBundle] pathForResource: @"Elementos" ofType: @"plist"];
@@ -38,12 +40,14 @@
     self.cantidadElem = 0;
     
     self.matrizFiltrada = [[NSMutableArray alloc]init];
+    self.matrizRandomizada = [[NSMutableArray alloc]init];
     
     NSString *stringUrl;
     
     //Se cargan las imagenes si esque no se encuentra cargados los datos del plist
     for (int i = 0; i < self.Matriz.count; i++) {
         self.elemMatriz = self.Matriz[i];
+        [self.elemMatriz setObject:@"habilitado" forKey:@"Disponible"];
         if ([[self.elemMatriz objectForKey:@"ImgData"]length]==0) {
             stringUrl = [self.elemMatriz objectForKey:@"ImgURL"];
             NSURL *nsurl = [NSURL URLWithString: stringUrl];
@@ -59,6 +63,15 @@
     }
     [self.Matriz writeToFile: filePath atomically: YES];
     
+    NSInteger indiceRandomizada = 0;
+    
+    while (self.matrizFiltrada.count >= 1) {
+        NSInteger indiceFiltrada = arc4random_uniform(self.matrizFiltrada.count);
+        self.matrizRandomizada[indiceRandomizada] = self.matrizFiltrada[indiceFiltrada];
+        [self.matrizFiltrada removeObjectAtIndex:indiceFiltrada];
+        indiceRandomizada++;
+    }
+    
     if (self.cantidadElem > [self.cantidad integerValue]) {
         self.cantidadElem = [self.cantidad integerValue];
     }
@@ -67,6 +80,9 @@
     
     //inicializar timer
     [self startTime];
+    
+    //inicializar oportunidad presionada en 0
+    self.oportunidadPresionada = false;
     
     //agregar notificaciones
     UIApplication *app = [UIApplication sharedApplication];
@@ -77,7 +93,7 @@
     NSLog(@"%ld",(long)self.cantidadElem);
     NSLog(@"%ld",(long)self.Matriz.count);
     for (int i = 0; i<self.cantidadElem; i++) {
-        NSString *nombre = [self.matrizFiltrada[i] objectForKey:@"Nombre"];
+        NSString *nombre = [self.matrizRandomizada[i] objectForKey:@"Nombre"];
         NSLog(nombre);
     }
 
@@ -113,15 +129,27 @@
 }
 
 #pragma mark - File Path Plist
+
+//Sacar elementos
 - (NSString *) dataFilePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains ( NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex: 0];
     return [documentsDirectory stringByAppendingPathComponent:@"Elementos.plist"];
 }
 
+//Sacar scores
+
+- (NSString *) scoreFilePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains ( NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex: 0];
+    return [documentsDirectory stringByAppendingPathComponent:@"Scores.plist"];
+}
+
+
+#pragma mark - Random Seleccion
 - (void) generaRandomSeleccion{
-    NSInteger r = arc4random_uniform(self.cantidadElem);
-    NSString *adivina = [self.matrizFiltrada[r] objectForKey:@"Nombre"];
+    self.indiceAdivina = arc4random_uniform(self.cantidadElem);
+    NSString *adivina = [self.matrizRandomizada[self.indiceAdivina] objectForKey:@"Nombre"];
     self.lblAdivina.text = adivina;
     self.tiempoIniciaPalabra = [self.lblTiempoJuego.text intValue];
 }
@@ -143,6 +171,42 @@
 
 #pragma mark - Oportunidad
 - (IBAction)presionoOportunidad:(id)sender {
+    if (self.cantidadElem>1) {
+        if (!self.oportunidadPresionada) {
+            self.oportunidadPresionada = true;
+            self.oportunidadesUsadas++;
+            if (self.indiceAdivina > self.cantidadElem/2) {
+                //Desaparecer la mitad de arriba
+                for (int i=0; i<self.cantidadElem/2; i++) {
+                    [self.matrizRandomizada[i] setValue:@"deshabilitado" forKey:@"Disponible"];
+                }
+            }
+            else{
+                //Desaparecer la mitad de abajo
+                for (int i=self.cantidadElem/2; i<self.cantidadElem; i++) {
+                    [self.matrizRandomizada[i] setValue:@"deshabilitado" forKey:@"Disponible"];
+                }
+            }
+            [self.collViewMatrizImagenes reloadData];
+        }
+    }
+}
+
+- (void)recuperarOportunidad{
+    self.oportunidadPresionada = false;
+    if (self.indiceAdivina > self.cantidadElem/2) {
+        //Aparecer la mitad de arriba
+        for (int i=0; i<self.cantidadElem/2; i++) {
+            [self.matrizRandomizada[i] setValue:@"habilitado" forKey:@"Disponible"];
+        }
+    }
+    else{
+        //Aparecer la mitad de abajo
+        for (int i=self.cantidadElem/2; i<self.cantidadElem; i++) {
+            [self.matrizRandomizada[i] setValue:@"habilitado" forKey:@"Disponible"];
+        }
+    }
+    [self.collViewMatrizImagenes reloadData];
 }
 
 
@@ -160,9 +224,14 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     celda *cell = [cv dequeueReusableCellWithReuseIdentifier:@"elemento" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
-    NSData *data = [self.matrizFiltrada[indexPath.row] objectForKey:@"ImgData"];
-    UIImage *imagen = [UIImage imageWithData: data];
-    cell.imgCelda.image = imagen;
+    if ([[self.matrizRandomizada[indexPath.row] objectForKey:@"Disponible"]isEqualToString:@"habilitado"]) {
+        NSData *data = [self.matrizRandomizada[indexPath.row] objectForKey:@"ImgData"];
+        UIImage *imagen = [UIImage imageWithData: data];
+        cell.imgCelda.image = imagen;
+    }
+    else{
+        cell.imgCelda.image = nil;
+    }
     return cell;
 }
 // 4
@@ -176,15 +245,20 @@
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *textoPicado = [self.matrizFiltrada[indexPath.row] objectForKey:@"Nombre"];
-    // Falta implementar el metodo de selecion
+    NSString *textoPicado = [self.matrizRandomizada[indexPath.row] objectForKey:@"Nombre"];
     if ([self.lblAdivina.text isEqualToString: textoPicado]) {
-        [self.matrizFiltrada removeObjectAtIndex:indexPath.row];
+        [self recuperarOportunidad];
+        [self.matrizRandomizada removeObjectAtIndex:indexPath.row];
         self.cantidadElem--;
         [self atino];
         NSLog(@"Adivinaste");
-        if (self.matrizFiltrada.count >0) {
+        NSLog(@"%ld",(long)self.cantidadElem);
+        if (self.cantidadElem >=1) {
             [self generaRandomSeleccion];
+        }
+        else{
+            self.lblAdivina.text = nil;
+            [self finDeJuego];
         }
     }
     else{
@@ -253,5 +327,75 @@
         self.lblScore.text = [NSString stringWithFormat:@"%ld", (long)score];
     }
 }
+
+#pragma mark - Fin del Juego
+
+- (void) finDeJuego{
+    
+    NSString *filePath = [self scoreFilePath];
+    
+    NSString *plistPath = [ [NSBundle mainBundle] pathForResource: @"Scores" ofType: @"plist"];
+    
+    NSMutableDictionary *score = [NSMutableDictionary alloc];
+    
+    //Revisa si el plist ya existe en la carpeta de datos o si se tiene que guardar
+    if ([[NSFileManager defaultManager] fileExistsAtPath: filePath]){
+        score = [score initWithContentsOfFile: filePath];
+        NSLog(@"Ya existe");
+    }
+    else{
+        score = [score initWithContentsOfFile: plistPath];
+        [score writeToFile: filePath atomically: YES];
+        NSLog(@"No existe todavia");
+    }
+    
+    NSNumber *scoreFinal = [NSNumber numberWithInteger:[self.lblScore.text intValue]];
+    NSNumber *tiempoFinal = [NSNumber numberWithInteger:[self.lblTiempoJuego.text intValue]];
+    NSNumber *oportunidadesUsadas = [NSNumber numberWithInteger:self.oportunidadesUsadas];
+    
+    
+    if ([[score objectForKey:@"Puntaje"]intValue]< [scoreFinal intValue]) {
+        [score setValue:scoreFinal forKey:@"Puntaje"];
+        [score setValue:tiempoFinal forKey:@"Tiempo Finalizado"];
+        [score setValue:oportunidadesUsadas forKey:@"Oportunidades"];
+    }
+    else if ([[score objectForKey:@"Puntaje"]intValue]== [scoreFinal intValue]){
+        if ([[score objectForKey:@"Oportunidades"]intValue]<[oportunidadesUsadas intValue]) {
+            [score setValue:scoreFinal forKey:@"Puntaje"];
+            [score setValue:tiempoFinal forKey:@"Tiempo Finalizado"];
+            [score setValue:oportunidadesUsadas forKey:@"Oportunidades"];
+        }
+        else if([[score objectForKey:@"Oportunidades"]intValue]<[oportunidadesUsadas intValue]){
+            if ([[score objectForKey:@"Tiempo Finalizado"]intValue]<[tiempoFinal intValue]) {
+                [score setValue:scoreFinal forKey:@"Puntaje"];
+                [score setValue:tiempoFinal forKey:@"Tiempo Finalizado"];
+                [score setValue:oportunidadesUsadas forKey:@"Oportunidades"];
+            }
+        }
+    }
+    
+    [score writeToFile: filePath atomically: YES];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Felicidades" message:@"Haz terminado el juego con éxito, ¿qué deseas hacer?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Reiniciar",@"Scores",@"Inicio",@"Salir",nil];
+    // optional - add more buttons:
+    [alert show];
+
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        // Reiniciar Partida
+    }
+    else if (buttonIndex == 2){
+        // Ir a Scores
+    }
+    else if (buttonIndex == 3){
+        // Ir a Inicio
+    }
+    else if (buttonIndex == 4){
+        // Salir del Juego
+    }
+}
+
 
 @end
