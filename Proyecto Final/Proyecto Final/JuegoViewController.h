@@ -21,6 +21,7 @@
 - (IBAction)presionoOportunidad:(id)sender;
 @property NSInteger indiceAdivina;
 @property BOOL oportunidadPresionada;
+@property NSInteger oportunidadesUsadas;
 
 //variables de la matriz de objetos
 @property (strong, nonatomic)NSMutableArray *Matriz;

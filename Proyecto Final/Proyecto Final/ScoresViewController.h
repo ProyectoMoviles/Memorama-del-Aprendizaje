@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ScoresViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *lblScore;
+@property (weak, nonatomic) IBOutlet UILabel *lblOportunidades;
+@property (weak, nonatomic) IBOutlet UILabel *lblTiempo;
 
 @end

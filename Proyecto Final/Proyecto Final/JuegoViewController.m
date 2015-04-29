@@ -20,6 +20,8 @@
     
     // Do any additional setup after loading the view.
     
+    self.oportunidadesUsadas = 0;
+    
     NSString *filePath = [self dataFilePath];
     
     NSString *plistPath = [ [NSBundle mainBundle] pathForResource: @"Elementos" ofType: @"plist"];
@@ -127,12 +129,24 @@
 }
 
 #pragma mark - File Path Plist
+
+//Sacar elementos
 - (NSString *) dataFilePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains ( NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex: 0];
     return [documentsDirectory stringByAppendingPathComponent:@"Elementos.plist"];
 }
 
+//Sacar scores
+
+- (NSString *) scoreFilePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains ( NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex: 0];
+    return [documentsDirectory stringByAppendingPathComponent:@"Scores.plist"];
+}
+
+
+#pragma mark - Random Seleccion
 - (void) generaRandomSeleccion{
     self.indiceAdivina = arc4random_uniform(self.cantidadElem);
     NSString *adivina = [self.matrizRandomizada[self.indiceAdivina] objectForKey:@"Nombre"];
@@ -160,6 +174,7 @@
     if (self.cantidadElem>1) {
         if (!self.oportunidadPresionada) {
             self.oportunidadPresionada = true;
+            self.oportunidadesUsadas++;
             if (self.indiceAdivina > self.cantidadElem/2) {
                 //Desaparecer la mitad de arriba
                 for (int i=0; i<self.cantidadElem/2; i++) {
@@ -243,6 +258,7 @@
         }
         else{
             self.lblAdivina.text = nil;
+            [self finDeJuego];
         }
     }
     else{
@@ -311,5 +327,75 @@
         self.lblScore.text = [NSString stringWithFormat:@"%ld", (long)score];
     }
 }
+
+#pragma mark - Fin del Juego
+
+- (void) finDeJuego{
+    
+    NSString *filePath = [self scoreFilePath];
+    
+    NSString *plistPath = [ [NSBundle mainBundle] pathForResource: @"Scores" ofType: @"plist"];
+    
+    NSMutableDictionary *score = [NSMutableDictionary alloc];
+    
+    //Revisa si el plist ya existe en la carpeta de datos o si se tiene que guardar
+    if ([[NSFileManager defaultManager] fileExistsAtPath: filePath]){
+        score = [score initWithContentsOfFile: filePath];
+        NSLog(@"Ya existe");
+    }
+    else{
+        score = [score initWithContentsOfFile: plistPath];
+        [score writeToFile: filePath atomically: YES];
+        NSLog(@"No existe todavia");
+    }
+    
+    NSNumber *scoreFinal = [NSNumber numberWithInteger:[self.lblScore.text intValue]];
+    NSNumber *tiempoFinal = [NSNumber numberWithInteger:[self.lblTiempoJuego.text intValue]];
+    NSNumber *oportunidadesUsadas = [NSNumber numberWithInteger:self.oportunidadesUsadas];
+    
+    
+    if ([[score objectForKey:@"Puntaje"]intValue]< [scoreFinal intValue]) {
+        [score setValue:scoreFinal forKey:@"Puntaje"];
+        [score setValue:tiempoFinal forKey:@"Tiempo Finalizado"];
+        [score setValue:oportunidadesUsadas forKey:@"Oportunidades"];
+    }
+    else if ([[score objectForKey:@"Puntaje"]intValue]== [scoreFinal intValue]){
+        if ([[score objectForKey:@"Oportunidades"]intValue]<[oportunidadesUsadas intValue]) {
+            [score setValue:scoreFinal forKey:@"Puntaje"];
+            [score setValue:tiempoFinal forKey:@"Tiempo Finalizado"];
+            [score setValue:oportunidadesUsadas forKey:@"Oportunidades"];
+        }
+        else if([[score objectForKey:@"Oportunidades"]intValue]<[oportunidadesUsadas intValue]){
+            if ([[score objectForKey:@"Tiempo Finalizado"]intValue]<[tiempoFinal intValue]) {
+                [score setValue:scoreFinal forKey:@"Puntaje"];
+                [score setValue:tiempoFinal forKey:@"Tiempo Finalizado"];
+                [score setValue:oportunidadesUsadas forKey:@"Oportunidades"];
+            }
+        }
+    }
+    
+    [score writeToFile: filePath atomically: YES];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Felicidades" message:@"Haz terminado el juego con éxito, ¿qué deseas hacer?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Reiniciar",@"Scores",@"Inicio",@"Salir",nil];
+    // optional - add more buttons:
+    [alert show];
+
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        // Reiniciar Partida
+    }
+    else if (buttonIndex == 2){
+        // Ir a Scores
+    }
+    else if (buttonIndex == 3){
+        // Ir a Inicio
+    }
+    else if (buttonIndex == 4){
+        // Salir del Juego
+    }
+}
+
 
 @end
