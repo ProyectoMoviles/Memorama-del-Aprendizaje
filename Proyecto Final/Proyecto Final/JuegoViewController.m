@@ -38,6 +38,7 @@
     self.cantidadElem = 0;
     
     self.matrizFiltrada = [[NSMutableArray alloc]init];
+    self.matrizRandomizada = [[NSMutableArray alloc]init];
     
     NSString *stringUrl;
     
@@ -60,6 +61,15 @@
     }
     [self.Matriz writeToFile: filePath atomically: YES];
     
+    NSInteger indiceRandomizada = 0;
+    
+    while (self.matrizFiltrada.count >= 1) {
+        NSInteger indiceFiltrada = arc4random_uniform(self.matrizFiltrada.count);
+        self.matrizRandomizada[indiceRandomizada] = self.matrizFiltrada[indiceFiltrada];
+        [self.matrizFiltrada removeObjectAtIndex:indiceFiltrada];
+        indiceRandomizada++;
+    }
+    
     if (self.cantidadElem > [self.cantidad integerValue]) {
         self.cantidadElem = [self.cantidad integerValue];
     }
@@ -81,7 +91,7 @@
     NSLog(@"%ld",(long)self.cantidadElem);
     NSLog(@"%ld",(long)self.Matriz.count);
     for (int i = 0; i<self.cantidadElem; i++) {
-        NSString *nombre = [self.matrizFiltrada[i] objectForKey:@"Nombre"];
+        NSString *nombre = [self.matrizRandomizada[i] objectForKey:@"Nombre"];
         NSLog(nombre);
     }
 
@@ -125,7 +135,7 @@
 
 - (void) generaRandomSeleccion{
     self.indiceAdivina = arc4random_uniform(self.cantidadElem);
-    NSString *adivina = [self.matrizFiltrada[self.indiceAdivina] objectForKey:@"Nombre"];
+    NSString *adivina = [self.matrizRandomizada[self.indiceAdivina] objectForKey:@"Nombre"];
     self.lblAdivina.text = adivina;
     self.tiempoIniciaPalabra = [self.lblTiempoJuego.text intValue];
 }
@@ -153,13 +163,13 @@
             if (self.indiceAdivina > self.cantidadElem/2) {
                 //Desaparecer la mitad de arriba
                 for (int i=0; i<self.cantidadElem/2; i++) {
-                    [self.matrizFiltrada[i] setValue:@"deshabilitado" forKey:@"Disponible"];
+                    [self.matrizRandomizada[i] setValue:@"deshabilitado" forKey:@"Disponible"];
                 }
             }
             else{
                 //Desaparecer la mitad de abajo
                 for (int i=self.cantidadElem/2; i<self.cantidadElem; i++) {
-                    [self.matrizFiltrada[i] setValue:@"deshabilitado" forKey:@"Disponible"];
+                    [self.matrizRandomizada[i] setValue:@"deshabilitado" forKey:@"Disponible"];
                 }
             }
             [self.collViewMatrizImagenes reloadData];
@@ -170,15 +180,15 @@
 - (void)recuperarOportunidad{
     self.oportunidadPresionada = false;
     if (self.indiceAdivina > self.cantidadElem/2) {
-        //Desaparecer la mitad de arriba
+        //Aparecer la mitad de arriba
         for (int i=0; i<self.cantidadElem/2; i++) {
-            [self.matrizFiltrada[i] setValue:@"habilitado" forKey:@"Disponible"];
+            [self.matrizRandomizada[i] setValue:@"habilitado" forKey:@"Disponible"];
         }
     }
     else{
-        //Desaparecer la mitad de abajo
+        //Aparecer la mitad de abajo
         for (int i=self.cantidadElem/2; i<self.cantidadElem; i++) {
-            [self.matrizFiltrada[i] setValue:@"habilitado" forKey:@"Disponible"];
+            [self.matrizRandomizada[i] setValue:@"habilitado" forKey:@"Disponible"];
         }
     }
     [self.collViewMatrizImagenes reloadData];
@@ -199,8 +209,8 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     celda *cell = [cv dequeueReusableCellWithReuseIdentifier:@"elemento" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
-    if ([[self.matrizFiltrada[indexPath.row] objectForKey:@"Disponible"]isEqualToString:@"habilitado"]) {
-        NSData *data = [self.matrizFiltrada[indexPath.row] objectForKey:@"ImgData"];
+    if ([[self.matrizRandomizada[indexPath.row] objectForKey:@"Disponible"]isEqualToString:@"habilitado"]) {
+        NSData *data = [self.matrizRandomizada[indexPath.row] objectForKey:@"ImgData"];
         UIImage *imagen = [UIImage imageWithData: data];
         cell.imgCelda.image = imagen;
     }
@@ -220,15 +230,19 @@
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *textoPicado = [self.matrizFiltrada[indexPath.row] objectForKey:@"Nombre"];
+    NSString *textoPicado = [self.matrizRandomizada[indexPath.row] objectForKey:@"Nombre"];
     if ([self.lblAdivina.text isEqualToString: textoPicado]) {
         [self recuperarOportunidad];
-        [self.matrizFiltrada removeObjectAtIndex:indexPath.row];
+        [self.matrizRandomizada removeObjectAtIndex:indexPath.row];
         self.cantidadElem--;
         [self atino];
         NSLog(@"Adivinaste");
-        if (self.matrizFiltrada.count >0) {
+        NSLog(@"%ld",(long)self.cantidadElem);
+        if (self.cantidadElem >=1) {
             [self generaRandomSeleccion];
+        }
+        else{
+            self.lblAdivina.text = nil;
         }
     }
     else{

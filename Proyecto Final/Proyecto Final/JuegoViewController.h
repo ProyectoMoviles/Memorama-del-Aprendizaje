@@ -27,6 +27,7 @@
 @property (strong, nonatomic)NSMutableDictionary *elemMatriz;
 @property (nonatomic)NSInteger cantidadElem;
 @property (strong, nonatomic) NSMutableArray *matrizFiltrada;
+@property (strong, nonatomic) NSMutableArray *matrizRandomizada;
 
 //Parametros para matriz de dificultad y categoría
 @property NSString *dificultad;
