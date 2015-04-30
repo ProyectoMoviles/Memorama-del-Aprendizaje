@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ZO-8F-mOq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ZO-8F-mOq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Dificultad View Controller-->
@@ -150,6 +150,9 @@
                         <outlet property="lblAdivina" destination="1Z8-Sz-cCm" id="fpL-7K-cwP"/>
                         <outlet property="lblScore" destination="DKV-3q-S3P" id="3js-EQ-ED6"/>
                         <outlet property="lblTiempoJuego" destination="BSN-ge-lyf" id="4iw-Sx-ipP"/>
+                        <segue destination="RAS-4j-udg" kind="presentation" identifier="reiniciar" id="KqN-UL-IUL"/>
+                        <segue destination="7ZO-8F-mOq" kind="presentation" identifier="inicio" id="D8X-JP-RmY"/>
+                        <segue destination="ezU-OU-6dP" kind="presentation" identifier="scores" id="yft-6y-096"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubo-jS-hIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -202,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8RX-Sm-8oS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="890" y="428"/>
+            <point key="canvasLocation" x="884" y="428"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="JOJ-4n-hs8">
@@ -231,7 +234,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ezU-OU-6dP" kind="show" id="KGm-x4-yHC"/>
+                                    <segue destination="ezU-OU-6dP" kind="show" identifier="scores" id="KGm-x4-yHC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Err-TT-8ws">
@@ -310,11 +313,21 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFt-eh-Rt5">
+                                <rect key="frame" x="137" y="370" width="39" height="30"/>
+                                <state key="normal" title="Menu">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bF1-LB-QpW" kind="presentation" identifier="menu" id="8eX-ko-tf0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="btmenu" destination="ZFt-eh-Rt5" id="KNY-Rv-2A9"/>
                         <outlet property="lblOportunidades" destination="O2g-HT-Eam" id="Pdg-6t-cGR"/>
                         <outlet property="lblScore" destination="geC-6K-8ug" id="Y6O-P2-d3t"/>
                         <outlet property="lblTiempo" destination="jSd-7v-jbq" id="Wzi-tX-9dc"/>
@@ -360,13 +373,16 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3E-b2-zju" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-89" y="428"/>
+            <point key="canvasLocation" x="7" y="428"/>
         </scene>
     </scenes>
     <resources>
         <image name="Bomb.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="i7K-1S-XkN"/>
+        <segue reference="6bY-IH-CIU"/>
         <segue reference="RVa-80-wmX"/>
+        <segue reference="KGm-x4-yHC"/>
     </inferredMetricsTieBreakers>
 </document>

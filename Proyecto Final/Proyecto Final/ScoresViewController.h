@@ -12,5 +12,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblScore;
 @property (weak, nonatomic) IBOutlet UILabel *lblOportunidades;
 @property (weak, nonatomic) IBOutlet UILabel *lblTiempo;
-
+@property (strong, nonatomic) IBOutlet UIButton *btmenu;
+@property NSString *dificultad;
+@property NSString *categoria;
+@property NSNumber *cantidad;
+@property Boolean *menuFlag;
 @end

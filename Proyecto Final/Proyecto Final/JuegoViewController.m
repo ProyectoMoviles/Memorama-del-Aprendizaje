@@ -8,6 +8,7 @@
 
 #import "JuegoViewController.h"
 #import "MenuViewController.h"
+#import "ScoresViewController.h"
 
 @interface JuegoViewController ()
 
@@ -293,6 +294,22 @@
         controller.dificultad = self.dificultad;
         controller.cantidad = self.cantidad;
     }
+    if ([[segue identifier] isEqualToString:@"reiniciar"]) {
+        
+        JuegoViewController *controller = [[[segue destinationViewController]viewControllers]objectAtIndex:0];
+        
+        controller.categoria = self.categoria;
+        controller.dificultad = self.dificultad;
+        controller.cantidad = self.cantidad;
+    }
+    if ([[segue identifier] isEqualToString:@"scores"]) {
+        
+        ScoresViewController *controller = [segue destinationViewController];
+        
+        controller.categoria = self.categoria;
+        controller.dificultad = self.dificultad;
+        controller.cantidad = self.cantidad;
+    }
 }
 
 #pragma mark - Score
@@ -378,24 +395,24 @@
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Felicidades" message:@"Haz terminado el juego con éxito, ¿qué deseas hacer?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Reiniciar",@"Scores",@"Inicio",@"Salir",nil];
     // optional - add more buttons:
+    self.lblTiempoJuego.hidden = true;
     [alert show];
 
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 1) {
-        // Reiniciar Partida
+    if (buttonIndex == 0) {
+        [self performSegueWithIdentifier:@"reiniciar" sender:self];
+    }
+    else if (buttonIndex == 1){
+        [self performSegueWithIdentifier:@"scores" sender:self];
     }
     else if (buttonIndex == 2){
-        // Ir a Scores
+        [self performSegueWithIdentifier:@"inicio" sender:self];
     }
     else if (buttonIndex == 3){
-        // Ir a Inicio
-    }
-    else if (buttonIndex == 4){
-        // Salir del Juego
+        exit(0);
     }
 }
-
 
 @end

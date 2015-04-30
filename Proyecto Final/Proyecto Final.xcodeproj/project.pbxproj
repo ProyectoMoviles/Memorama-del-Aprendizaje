@@ -121,13 +121,13 @@
 				13159FC81AC228D30038084B /* Main.storyboard */,
 				7DF244241AE66C6F007DAA2B /* MenuViewController.h */,
 				7DF244251AE66C6F007DAA2B /* MenuViewController.m */,
+				1303813B1AC4D7A4000C5612 /* ScoresViewController.h */,
+				1303813C1AC4D7A4000C5612 /* ScoresViewController.m */,
 				13A97C131AC9C2FC00328706 /* Partida.plist */,
 				133E2EEC1AD1B811001F29A3 /* Elementos.plist */,
 				132F63451AF146AA00CC4E91 /* Scores.plist */,
 				133E2EEE1AD1B98E001F29A3 /* Categorias.plist */,
 				7DF244191AE658D3007DAA2B /* Dificultades.plist */,
-				1303813B1AC4D7A4000C5612 /* ScoresViewController.h */,
-				1303813C1AC4D7A4000C5612 /* ScoresViewController.m */,
 				13159FCB1AC228D30038084B /* Images.xcassets */,
 				13159FCD1AC228D30038084B /* LaunchScreen.xib */,
 				FB92C2241AC34DE70021C171 /* Bomb.png */,
@@ -432,6 +432,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Proyecto FinalTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Proyecto Final.app/Proyecto Final";
@@ -447,6 +448,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Proyecto FinalTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Proyecto Final.app/Proyecto Final";

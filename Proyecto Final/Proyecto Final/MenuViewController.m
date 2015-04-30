@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "JuegoViewController.h"
+#import "ScoresViewController.h"
 
 @interface MenuViewController ()
 
@@ -25,20 +26,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)bsalir:(id)sender {
     exit(0);
 }
 
+#pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"reiniciar"]) {
         
@@ -48,5 +40,15 @@
         controller.dificultad = self.dificultad;
         controller.cantidad = self.cantidad;
     }
+    if ([[segue identifier] isEqualToString:@"scores"]) {
+        
+        ScoresViewController *controller = [segue destinationViewController];
+        
+        controller.menuFlag = true;
+        controller.categoria = self.categoria;
+        controller.dificultad = self.dificultad;
+        controller.cantidad = self.cantidad;
+    }
 }
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ScoresViewController.h"
+#import "MenuViewController.h"
 
 @interface ScoresViewController ()
 
@@ -16,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if (self.menuFlag) {
+        self.btmenu.hidden = true;
+    }
     // Do any additional setup after loading the view.
     
     NSString *filePath = [self scoreFilePath];
@@ -51,14 +55,15 @@
     return [documentsDirectory stringByAppendingPathComponent:@"Scores.plist"];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"menu"]) {
+        
+        MenuViewController *controller = [segue destinationViewController];
+        
+        controller.categoria = self.categoria;
+        controller.dificultad = self.dificultad;
+        controller.cantidad = self.cantidad;
+    }
 }
-*/
 
 @end
