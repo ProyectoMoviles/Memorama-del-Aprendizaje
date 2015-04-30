@@ -38,6 +38,7 @@
 //Variables del tiempo
 @property (weak, nonatomic) IBOutlet UILabel *lblTiempoJuego;
 @property (strong,nonatomic) NSTimer *myTicker;
+@property BOOL seFueAMenu;
 
 //Variables del Score
 @property NSInteger tiempoIniciaPalabra;

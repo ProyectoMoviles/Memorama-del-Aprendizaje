@@ -160,16 +160,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 #pragma mark - Oportunidad
 - (IBAction)presionoOportunidad:(id)sender {
     if (self.cantidadElem>1) {
@@ -195,7 +185,7 @@
 
 - (void)recuperarOportunidad{
     self.oportunidadPresionada = false;
-    if (self.indiceAdivina > self.cantidadElem/2) {
+    if (self.indiceAdivina+1 > self.cantidadElem/2) {
         //Aparecer la mitad de arriba
         for (int i=0; i<self.cantidadElem/2; i++) {
             [self.matrizRandomizada[i] setValue:@"habilitado" forKey:@"Disponible"];
@@ -285,8 +275,14 @@
     return UIEdgeInsetsMake(50, 20, 50, 20);
 }
 
+#pragma mark - Navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"menu"]) {
+        
+        [self stopTime];
+        
+        self.seFueAMenu = true;
         
         MenuViewController *controller = [segue destinationViewController];
         
@@ -309,6 +305,14 @@
         controller.categoria = self.categoria;
         controller.dificultad = self.dificultad;
         controller.cantidad = self.cantidad;
+    }
+}
+
+- (void) viewWillAppear:(BOOL)animated{
+    if (self.seFueAMenu) {
+        [self startTime];
+        NSLog(@"volvio");
+        self.seFueAMenu = false;
     }
 }
 
