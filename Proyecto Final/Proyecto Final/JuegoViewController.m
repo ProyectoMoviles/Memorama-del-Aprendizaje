@@ -176,7 +176,7 @@
         if (!self.oportunidadPresionada) {
             self.oportunidadPresionada = true;
             self.oportunidadesUsadas++;
-            if (self.indiceAdivina > self.cantidadElem/2) {
+            if (self.indiceAdivina+1 > self.cantidadElem/2) {
                 //Desaparecer la mitad de arriba
                 for (int i=0; i<self.cantidadElem/2; i++) {
                     [self.matrizRandomizada[i] setValue:@"deshabilitado" forKey:@"Disponible"];
