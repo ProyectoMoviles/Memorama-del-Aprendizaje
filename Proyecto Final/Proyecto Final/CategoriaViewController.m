@@ -76,4 +76,12 @@
         controller.cantidad = self.cantidad;
     }
 }
+
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    NSDictionary *object = arregloCategoria[row];
+    NSString *title = [object objectForKey: @"Nombre"];
+    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    return attString;
+}
 @end

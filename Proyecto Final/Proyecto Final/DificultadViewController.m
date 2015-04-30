@@ -69,4 +69,11 @@
     }
 }
 
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    NSDictionary *object = arregloDifficultad[row];
+    NSString *title = [object objectForKey: @"Nombre"];
+    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    return attString;
+}
 @end

@@ -25,6 +25,8 @@
 		7DF244201AE65F88007DAA2B /* CategoriaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF2441F1AE65F88007DAA2B /* CategoriaViewController.m */; };
 		7DF244261AE66C6F007DAA2B /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF244251AE66C6F007DAA2B /* MenuViewController.m */; };
 		FB92C2251AC34DE70021C171 /* Bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = FB92C2241AC34DE70021C171 /* Bomb.png */; };
+		FBD038B61AF2A89F00063293 /* marco.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD038B51AF2A89F00063293 /* marco.png */; };
+		FBD038BA1AF2AA5000063293 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD038B91AF2AA5000063293 /* 1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		7DF244241AE66C6F007DAA2B /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		7DF244251AE66C6F007DAA2B /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		FB92C2241AC34DE70021C171 /* Bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bomb.png; sourceTree = "<group>"; };
+		FBD038B51AF2A89F00063293 /* marco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marco.png; sourceTree = "<group>"; };
+		FBD038B91AF2AA5000063293 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 				13159FCB1AC228D30038084B /* Images.xcassets */,
 				13159FCD1AC228D30038084B /* LaunchScreen.xib */,
 				FB92C2241AC34DE70021C171 /* Bomb.png */,
+				FBD038B91AF2AA5000063293 /* 1.png */,
+				FBD038B51AF2A89F00063293 /* marco.png */,
 				13159FBE1AC228D30038084B /* Supporting Files */,
 			);
 			path = "Proyecto Final";
@@ -243,8 +249,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				132F63461AF146AA00CC4E91 /* Scores.plist in Resources */,
+				FBD038BA1AF2AA5000063293 /* 1.png in Resources */,
 				13159FCA1AC228D30038084B /* Main.storyboard in Resources */,
 				13A97C141AC9C2FC00328706 /* Partida.plist in Resources */,
+				FBD038B61AF2A89F00063293 /* marco.png in Resources */,
 				13159FCF1AC228D30038084B /* LaunchScreen.xib in Resources */,
 				133E2EEF1AD1B98E001F29A3 /* Categorias.plist in Resources */,
 				13159FCC1AC228D30038084B /* Images.xcassets in Resources */,
