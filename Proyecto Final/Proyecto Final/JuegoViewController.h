@@ -22,6 +22,7 @@
 @property NSInteger indiceAdivina;
 @property BOOL oportunidadPresionada;
 @property NSInteger oportunidadesUsadas;
+@property (weak, nonatomic) IBOutlet UIButton *btnBomba;
 
 //variables de la matriz de objetos
 @property (strong, nonatomic)NSMutableArray *Matriz;

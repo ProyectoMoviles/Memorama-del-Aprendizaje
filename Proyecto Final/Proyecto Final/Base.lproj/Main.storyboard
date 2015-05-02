@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ZO-8F-mOq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ZO-8F-mOq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--Dificultad View Controller-->
@@ -152,6 +152,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="btnBomba" destination="KdW-hm-WjC" id="VH9-SM-OG3"/>
                         <outlet property="collViewMatrizImagenes" destination="L1u-A2-erP" id="sIR-kg-SOf"/>
                         <outlet property="lblAdivina" destination="1Z8-Sz-cCm" id="fpL-7K-cwP"/>
                         <outlet property="lblScore" destination="DKV-3q-S3P" id="3js-EQ-ED6"/>
@@ -397,9 +398,9 @@
         <image name="marco.png" width="1024" height="807"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yft-6y-096"/>
+        <segue reference="6bY-IH-CIU"/>
         <segue reference="KqN-UL-IUL"/>
         <segue reference="D8X-JP-RmY"/>
-        <segue reference="8eX-ko-tf0"/>
+        <segue reference="yft-6y-096"/>
     </inferredMetricsTieBreakers>
 </document>

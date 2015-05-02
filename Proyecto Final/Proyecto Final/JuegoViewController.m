@@ -166,6 +166,7 @@
         if (!self.oportunidadPresionada) {
             self.oportunidadPresionada = true;
             self.oportunidadesUsadas++;
+            self.btnBomba.enabled = NO;
             if (self.indiceAdivina+1 > self.cantidadElem/2) {
                 //Desaparecer la mitad de arriba
                 for (int i=0; i<self.cantidadElem/2; i++) {
@@ -185,6 +186,7 @@
 
 - (void)recuperarOportunidad{
     self.oportunidadPresionada = false;
+    self.btnBomba.enabled = YES;
     if (self.indiceAdivina+1 > self.cantidadElem/2) {
         //Aparecer la mitad de arriba
         for (int i=0; i<self.cantidadElem/2; i++) {
