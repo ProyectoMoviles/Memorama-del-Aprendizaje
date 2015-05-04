@@ -216,14 +216,14 @@
 // 3
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     celda *cell = [cv dequeueReusableCellWithReuseIdentifier:@"elemento" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor whiteColor];
     if ([[self.matrizRandomizada[indexPath.row] objectForKey:@"Disponible"]isEqualToString:@"habilitado"]) {
         NSData *data = [self.matrizRandomizada[indexPath.row] objectForKey:@"ImgData"];
         UIImage *imagen = [UIImage imageWithData: data];
         cell.imgCelda.image = imagen;
     }
     else{
-        cell.imgCelda.image = nil;
+        
+        cell.imgCelda.image = [UIImage imageNamed:@"Carta.png"];
     }
     return cell;
 }
