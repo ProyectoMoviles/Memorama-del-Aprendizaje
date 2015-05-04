@@ -324,9 +324,9 @@
     self.tiempoAdivinaPalabra = [self.lblTiempoJuego.text intValue];
     NSInteger tiempoAdiv = self.tiempoAdivinaPalabra - self.tiempoIniciaPalabra;
     NSInteger score = [self.lblScore.text intValue];
-    if (tiempoAdiv > 5) {
-        if (tiempoAdiv > 10) {
-            if (tiempoAdiv > 15) {
+    if (tiempoAdiv > 2) {
+        if (tiempoAdiv > 4) {
+            if (tiempoAdiv > 6) {
                 score+=25;
             }
             else{

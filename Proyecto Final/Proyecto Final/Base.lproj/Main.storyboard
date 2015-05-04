@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ZO-8F-mOq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ZO-8F-mOq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--Dificultad View Controller-->
+        <!--Dificultad-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="DificultadViewController" sceneMemberID="viewController">
@@ -19,12 +19,6 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8KZ-Rd-m4Z">
                                 <rect key="frame" x="0.0" y="87" width="320" height="162"/>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dificultad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOS-oq-sg7">
-                                <rect key="frame" x="124" y="72" width="73" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORc-zU-h3p">
                                 <rect key="frame" x="133" y="257" width="54" height="30"/>
                                 <state key="normal" title="Aceptar">
@@ -38,7 +32,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.034429258480000002" green="0.38914535979999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nkw-cU-JiI"/>
+                    <navigationItem key="navigationItem" title="Dificultad" id="nkw-cU-JiI"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="lDificultad" destination="8KZ-Rd-m4Z" id="aJc-t0-nPL"/>
@@ -48,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="455" y="428"/>
         </scene>
-        <!--Juego View Controller-->
+        <!--Juego-->
         <scene sceneID="17S-ry-IYM">
             <objects>
                 <viewController id="hOS-bW-yri" customClass="JuegoViewController" sceneMemberID="viewController">
@@ -142,7 +136,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.034429258480000002" green="0.38914535979999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="tEn-Je-oQW">
+                    <navigationItem key="navigationItem" title="Juego" id="tEn-Je-oQW">
                         <barButtonItem key="rightBarButtonItem" title="Menu" id="Bdt-W5-dKy">
                             <color key="tintColor" red="0.034429258480000002" green="0.38914535979999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -166,7 +160,7 @@
             </objects>
             <point key="canvasLocation" x="1719" y="428"/>
         </scene>
-        <!--Categoria View Controller-->
+        <!--Categoría-->
         <scene sceneID="ttS-o1-ea6">
             <objects>
                 <viewController id="6yt-pG-0Xg" customClass="CategoriaViewController" sceneMemberID="viewController">
@@ -178,12 +172,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categoria" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6k-SD-DXa">
-                                <rect key="frame" x="123" y="72" width="75" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="89h-3K-2Ow">
                                 <rect key="frame" x="0.0" y="101" width="320" height="162"/>
                             </pickerView>
@@ -203,19 +191,19 @@
                         </subviews>
                         <color key="backgroundColor" red="0.034429258480000002" green="0.38914535979999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Categoría" id="eqs-NB-zo3"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="actIndicator" destination="uLv-SI-UoT" id="sCJ-3C-qZD"/>
                         <outlet property="bjugar" destination="JfR-Oy-5Ri" id="gTb-xp-lLW"/>
                         <outlet property="lCategoria" destination="89h-3K-2Ow" id="mlY-xC-laT"/>
-                        <outlet property="lcategoria" destination="N6k-SD-DXa" id="Y07-iO-anZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8RX-Sm-8oS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="884" y="428"/>
         </scene>
-        <!--Menu View Controller-->
+        <!--Menu-->
         <scene sceneID="JOJ-4n-hs8">
             <objects>
                 <viewController id="bF1-LB-QpW" customClass="MenuViewController" sceneMemberID="viewController">
@@ -267,15 +255,27 @@
                                     <segue destination="7ZO-8F-mOq" kind="presentation" id="i7K-1S-XkN"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHr-d5-xEc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem id="81I-eb-L8g"/>
+                                </items>
+                            </navigationBar>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeX-fx-dgV">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Menu" id="fM9-JO-Hoh"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.034429258480000002" green="0.38914535979999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="x0M-BH-w9g"/>
+                    <navigationItem key="navigationItem" title="Menu" id="x0M-BH-w9g"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Way-TG-Aps" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="890" y="1016"/>
+            <point key="canvasLocation" x="884" y="1010"/>
         </scene>
         <!--Scores View Controller-->
         <scene sceneID="Fg4-zq-p4q">
@@ -338,6 +338,18 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="xv6-Sf-ANf">
                                 <rect key="frame" x="78" y="63" width="165" height="146"/>
                             </imageView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzZ-xm-0n0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem id="reD-ow-y50"/>
+                                </items>
+                            </navigationBar>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37q-h0-StS">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Scores" id="9cP-jE-Oxa"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.034429258480000002" green="0.38914535979999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -398,9 +410,9 @@
         <image name="marco.png" width="1024" height="807"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6bY-IH-CIU"/>
-        <segue reference="KqN-UL-IUL"/>
         <segue reference="D8X-JP-RmY"/>
+        <segue reference="KqN-UL-IUL"/>
+        <segue reference="6bY-IH-CIU"/>
         <segue reference="yft-6y-096"/>
     </inferredMetricsTieBreakers>
 </document>

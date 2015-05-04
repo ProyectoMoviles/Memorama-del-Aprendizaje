@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Scores";
     if (self.menuFlag) {
         self.btmenu.hidden = true;
     }
