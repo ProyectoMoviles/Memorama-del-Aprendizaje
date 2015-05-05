@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ZO-8F-mOq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6xr-PU-oYu">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
     </dependencies>
     <scenes>
         <!--Dificultad-->
@@ -40,7 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="455" y="428"/>
+            <point key="canvasLocation" x="1267" y="428"/>
         </scene>
         <!--Juego-->
         <scene sceneID="17S-ry-IYM">
@@ -152,13 +152,13 @@
                         <outlet property="lblScore" destination="DKV-3q-S3P" id="3js-EQ-ED6"/>
                         <outlet property="lblTiempoJuego" destination="BSN-ge-lyf" id="4iw-Sx-ipP"/>
                         <segue destination="RAS-4j-udg" kind="presentation" identifier="reiniciar" id="KqN-UL-IUL"/>
-                        <segue destination="7ZO-8F-mOq" kind="presentation" identifier="inicio" id="D8X-JP-RmY"/>
                         <segue destination="ezU-OU-6dP" kind="presentation" identifier="scores" id="yft-6y-096"/>
+                        <segue destination="6xr-PU-oYu" kind="presentation" identifier="inicio" id="TV4-5d-bHp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubo-jS-hIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1719" y="428"/>
+            <point key="canvasLocation" x="2531" y="428"/>
         </scene>
         <!--Categoría-->
         <scene sceneID="ttS-o1-ea6">
@@ -201,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8RX-Sm-8oS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884" y="428"/>
+            <point key="canvasLocation" x="1696" y="428"/>
         </scene>
         <!--Menu-->
         <scene sceneID="JOJ-4n-hs8">
@@ -252,7 +252,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7ZO-8F-mOq" kind="presentation" id="i7K-1S-XkN"/>
+                                    <segue destination="6xr-PU-oYu" kind="presentation" id="5VX-p6-Jgr"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHr-d5-xEc">
@@ -275,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Way-TG-Aps" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884" y="1010"/>
+            <point key="canvasLocation" x="1696" y="1010"/>
         </scene>
         <!--Scores View Controller-->
         <scene sceneID="Fg4-zq-p4q">
@@ -363,7 +363,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VAf-B3-kwY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1719" y="1016"/>
+            <point key="canvasLocation" x="2531" y="1016"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8dO-DZ-uCM">
@@ -382,26 +382,120 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KPO-WI-Jws" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1307" y="428"/>
+            <point key="canvasLocation" x="2119" y="428"/>
+        </scene>
+        <!--Inicio-->
+        <scene sceneID="iZU-Rl-wAp">
+            <objects>
+                <viewController id="KYY-RR-BSd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N6a-Ck-8Kr"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z5j-vK-Ayn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wpa-SD-1tu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgG-gO-rVf">
+                                <rect key="frame" x="119" y="253" width="92" height="30"/>
+                                <state key="normal" title="Instrucciones">
+                                    <color key="titleColor" red="0.40924196000000002" green="1" blue="0.32364790659999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="wxb-EQ-9H1" kind="show" id="1Dq-Qv-Zc4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIN-cv-bYF">
+                                <rect key="frame" x="146" y="215" width="39" height="30"/>
+                                <state key="normal" title="Jugar">
+                                    <color key="titleColor" red="0.40924196000000002" green="1" blue="0.32364790659999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="LGI-Ax-IkE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.034429258480000002" green="0.38914535979999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Inicio" id="wsd-vc-vId"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F6t-MR-5iE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850" y="428"/>
+        </scene>
+        <!--Instrucciones-->
+        <scene sceneID="xb4-d5-vdb">
+            <objects>
+                <viewController title="Instrucciones" id="wxb-EQ-9H1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xZV-Iq-gSG"/>
+                        <viewControllerLayoutGuide type="bottom" id="HYC-Vl-Q4I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IOG-sk-ca1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bomb.png" translatesAutoresizingMaskIntoConstraints="NO" id="mxQ-Bl-ofH">
+                                <rect key="frame" x="254" y="343" width="50" height="50"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Yh-HL-Bob">
+                                <rect key="frame" x="16" y="296" width="236" height="144"/>
+                                <color key="backgroundColor" red="0.034429258480000002" green="0.38914535979999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Oportunidades:
+Siempre que desees puedes utilizar una oportunidad (indicada por el icono de la bomba) está es una pequeña ayuda que elimina la mitad de las imágenes del banco de imágenes para hacer más sencillo el adivinar. Toma en cuenta que utilizar la oportunidad te cuesta 50 puntos.</string>
+                                <color key="textColor" red="0.40924196000000002" green="1" blue="0.32364790659999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fAO-c6-JBl">
+                                <rect key="frame" x="16" y="72" width="288" height="227"/>
+                                <color key="backgroundColor" red="0.034429258480000002" green="0.38914535979999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Objetivo:
+El juego consiste en relacionar palabras con imágenes, y seleccionar la correcta de un banco de imágenes.
+
+Score:
+Tu score se calcula dependiendo de cuánto tiempo tardes en relacionar cada palabra.
+
+1 a 2 segundos = 100 puntos
+2 a 4 segundos = 75 puntos
+4 a 6 segundos = 50 puntos
+6 o más segundos = 25 puntos
+
+El tiempo total y numero de oportunidades usadas serán utilizadas en caso de empate.</string>
+                                <color key="textColor" red="0.40924196000000002" green="1" blue="0.32364790659999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.034429258480000002" green="0.38914535979999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vx4-Ek-4r7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850" y="1058"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="sLz-WA-9cn">
+        <scene sceneID="pkP-SI-sh0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7ZO-8F-mOq" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6xr-PU-oYu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g1F-Lw-9wD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2sD-Pp-OAK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="h4b-6n-mR8"/>
+                        <segue destination="KYY-RR-BSd" kind="relationship" relationship="rootViewController" id="Isf-Al-zY4"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O3E-b2-zju" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bFG-yP-qLl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7" y="428"/>
+            <point key="canvasLocation" x="406" y="428"/>
         </scene>
     </scenes>
     <resources>
@@ -410,9 +504,9 @@
         <image name="marco.png" width="1024" height="807"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="D8X-JP-RmY"/>
         <segue reference="KqN-UL-IUL"/>
-        <segue reference="6bY-IH-CIU"/>
+        <segue reference="TV4-5d-bHp"/>
         <segue reference="yft-6y-096"/>
+        <segue reference="6bY-IH-CIU"/>
     </inferredMetricsTieBreakers>
 </document>

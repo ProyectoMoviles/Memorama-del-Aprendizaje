@@ -167,6 +167,16 @@
             self.oportunidadPresionada = true;
             self.oportunidadesUsadas++;
             self.btnBomba.enabled = NO;
+            NSInteger score = [self.lblScore.text intValue];
+            if (score >= 50) {
+                score -= 50;
+            }
+            else{
+                score = 0;
+            }
+            self.lblScore.text = [NSString stringWithFormat:@"%ld", (long)score];
+            
+            
             if (self.indiceAdivina+1 > self.cantidadElem/2) {
                 //Desaparecer la mitad de arriba
                 for (int i=0; i<self.cantidadElem/2; i++) {
